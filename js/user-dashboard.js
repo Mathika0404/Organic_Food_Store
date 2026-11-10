@@ -186,12 +186,40 @@ function go(page) {
 
 }
 
+// SAVE USER DASHBOARD RETURN LOCATION
+sessionStorage.setItem("greenoraFromUserDashboard", "true");
+
+sessionStorage.removeItem("greenoraFromDashboard");
+sessionStorage.removeItem("greenoraReturnSection");
+
+const currentUserSection =
+    document.querySelector(".page-section.active");
+
+sessionStorage.setItem(
+    "greenoraUserReturnSection",
+    currentUserSection ? currentUserSection.id : "overview"
+);
+
 
 function showPage(page) {
 
     const target = document.getElementById(page);
 
     if (!target) return;
+
+    // SAVE EACH USER DASHBOARD SECTION IN BROWSER HISTORY
+history.pushState(
+    { dashboardPage: page },
+    "",
+    "#" + page
+);
+
+    // SAVE USER DASHBOARD AND CURRENT SECTION
+sessionStorage.setItem("greenoraFromUserDashboard", "true");
+sessionStorage.removeItem("greenoraFromDashboard");
+sessionStorage.removeItem("greenoraReturnSection");
+
+sessionStorage.setItem("greenoraUserReturnSection", page);
 
     // Hide all sections
 
@@ -659,28 +687,16 @@ document.addEventListener("click", function (event) {
     }
 
 
-    /* ADD TO CART */
+ 
+/* ADD TO CART - REDIRECT TO 404 */
 
-    const cartButton = event.target.closest("[data-cart]");
+const cartButton = event.target.closest("[data-cart]");
 
-    if (cartButton) {
+if (cartButton) {
+    window.location.href = "404.html";
+    return;
+}
 
-        const product = products.find(item =>
-            item.id === Number(cartButton.dataset.cart)
-        );
-
-
-        if (product) {
-
-            cart.push(product);
-
-            toast(`${product.name} added to your cart`);
-
-        }
-
-        return;
-
-    }
 
 
     /* COPY COUPON */
@@ -1157,33 +1173,61 @@ renderProducts();
 renderOrders();
 
 
+
 /* ============================================
-   INITIAL PAGE FROM URL HASH
+   RESTORE USER DASHBOARD SECTION
 ============================================ */
 
-const initialPage =
-    window.location.hash.replace("#", "");
-
-
 const validPages = [
-
     "overview",
-
     "shop",
-
     "orders",
-
     "wishlist",
-
     "rewards",
-
     "profile"
-
 ];
 
+function restoreUserPage() {
 
-if (validPages.includes(initialPage)) {
+    const page = window.location.hash.replace("#", "");
 
-    showPage(initialPage);
-
+    if (validPages.includes(page)) {
+        showPageWithoutHistory(page);
+    } else {
+        showPageWithoutHistory("overview");
+    }
 }
+
+function showPageWithoutHistory(page) {
+
+    const target = document.getElementById(page);
+
+    if (!target) return;
+
+    $$(".page-section").forEach(section => {
+        section.classList.toggle("active", section === target);
+    });
+
+    $$(".nav-links a").forEach(link => {
+        link.classList.toggle("active", link.dataset.page === page);
+    });
+
+    const titles = {
+        overview: "My Dashboard",
+        shop: "Shop Organic",
+        orders: "My Orders",
+        wishlist: "My Wishlist",
+        rewards: "Offers & Rewards",
+        profile: "My Profile"
+    };
+
+    const pageTitle = $("#pageTitle");
+
+    if (pageTitle) {
+        pageTitle.textContent = titles[page] || "My Dashboard";
+    }
+}
+
+restoreUserPage();
+
+window.addEventListener("popstate", restoreUserPage);

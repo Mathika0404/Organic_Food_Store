@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>404 - Page Not Found | Greenora</title>
+    <title>404 - Page Not Found | Stackly</title>
 
     <!-- GOOGLE FONTS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -486,7 +486,7 @@
 
             <a href="index.html" class="error-logo">
                 <i class="fa-solid fa-leaf"></i>
-                <span>GREENORA</span>
+                <span>STACKLY</span>
             </a>
 
             <!-- ERROR CONTENT -->
@@ -554,7 +554,7 @@
             <!-- FOOTER -->
 
             <div class="error-footer">
-                <p>© 2026 Greenora Organic Store. All Rights Reserved.</p>
+                <p>© 2026 Stackly Organic Store. All Rights Reserved.</p>
             </div>
 
         </div>
@@ -564,25 +564,23 @@
     <!-- JAVASCRIPT -->
 
     <script>
-// GO BACK — return to the exact dashboard and section that opened this page
+
+
+/* ============================================
+   GO BACK - RETURN TO EXACT PREVIOUS PAGE
+============================================ */
+
 function goBack() {
-    const fromUser = sessionStorage.getItem("greenoraFromUserDashboard");
-    const userSection = sessionStorage.getItem("greenoraUserReturnSection");
-    if (fromUser === "true" && userSection) {
-        window.location.href = "user-dashboard.html?returnSection=" + encodeURIComponent(userSection);
-        return;
+
+    // Return to the exact previous browser history entry
+    if (window.history.length > 1) {
+        window.history.back();
+    } else {
+        window.location.replace("index.html");
     }
 
-    const fromAdmin = sessionStorage.getItem("greenoraFromDashboard");
-    const adminSection = sessionStorage.getItem("greenoraReturnSection");
-    if (fromAdmin === "true" && adminSection) {
-        window.location.href = "admin-dashboard.html?returnSection=" + encodeURIComponent(adminSection);
-        return;
-    }
-
-    if (window.history.length > 1) window.history.back();
-    else window.location.href = "index.html";
 }
+
 
 // GO HOME — dashboard users return to their own dashboard landing page
 function goHome() {

@@ -21,9 +21,11 @@
 <!-- SIDEBAR -->
 <aside class="sidebar" id="sidebar">
 
-    <div class="brand">
+<div class="brand">
+    <a href="admin-dashboard.html">
         <img src="images/stackly_white_logo.webp" alt="Greenora Logo">
-    </div>
+    </a>
+</div>
 
     <p class="sidebar-label">MAIN MENU</p>
 
@@ -42,9 +44,6 @@
         </a>
         <a href="#" data-page="reports">
             <i class="fa-solid fa-chart-column"></i> Reports
-        </a>
-        <a href="#" data-page="settings">
-            <i class="fa-solid fa-gear"></i> Settings
         </a>
     </nav>
 
@@ -82,7 +81,7 @@
         </div>
 
           <!-- MOBILE CENTER LOGO -->
-    <a href="index.html" class="mobile-nav-logo">
+    <a href="admin-dashboard.html" class="mobile-nav-logo">
         <img src="images/stackly_logo.webp" alt="Greenora Logo">
     </a>
 
@@ -279,7 +278,7 @@
             <p>Manage your organic products, prices and stock.</p>
         </div>
 
-        <button class="add-product-btn" onclick="openProductModal()">
+        <button class="add-product-btn" onclick="window.location.href = '404.html'">
             <i class="fa-solid fa-plus"></i>
             Add New Product
         </button>
@@ -1347,44 +1346,6 @@
 </section>
 
     </div>
-
-<!-- SETTINGS / 404 SECTION -->
-<section class="page-section" id="settings">
-
-    <div class="error-404-container">
-
-        <div class="error-404-content">
-
-            <div class="error-404-icon">
-                <i class="fa-solid fa-triangle-exclamation"></i>
-            </div>
-
-            <h1>404</h1>
-
-            <h2>Page Not Found!</h2>
-
-            <p>
-                Oops! The settings page you're looking for
-                is currently unavailable or doesn't exist.
-            </p>
-
-            <div class="error-404-buttons">
-                <button onclick="history.back()">
-                    <i class="fa-solid fa-arrow-left"></i>
-                    Go Back
-                </button>
-
-                <button onclick="window.location.href='admin-dashboard.html'">
-                    <i class="fa-solid fa-house"></i>
-                    Go Home
-                </button>
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
 </main>
 </div>
 

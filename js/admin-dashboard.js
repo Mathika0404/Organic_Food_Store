@@ -28,6 +28,21 @@ const navLinks = document.querySelectorAll(".nav-links a");
 const sections = document.querySelectorAll(".page-section");
 const pageTitle = document.getElementById("pageTitle");
 
+// SAVE ADMIN DASHBOARD RETURN LOCATION
+sessionStorage.setItem("greenoraFromDashboard", "true");
+
+sessionStorage.removeItem("greenoraFromUserDashboard");
+sessionStorage.removeItem("greenoraUserReturnSection");
+
+const currentAdminSection =
+    document.querySelector(".page-section.active");
+
+sessionStorage.setItem(
+    "greenoraReturnSection",
+    currentAdminSection ? currentAdminSection.id : "dashboard"
+);
+
+
 function showPage(page) {
     sections.forEach(section => {
         section.classList.remove("active");
@@ -36,7 +51,21 @@ function showPage(page) {
     const selected = document.getElementById(page);
     if (!selected) return;
 
+    // SAVE ADMIN DASHBOARD SECTION IN HISTORY
+history.pushState(
+    { dashboardPage: page },
+    "",
+    "#" + page
+);
+
     selected.classList.add("active");
+
+    // SAVE ADMIN DASHBOARD AND CURRENT SECTION
+sessionStorage.setItem("greenoraFromDashboard", "true");
+sessionStorage.removeItem("greenoraFromUserDashboard");
+sessionStorage.removeItem("greenoraUserReturnSection");
+
+sessionStorage.setItem("greenoraReturnSection", page);
 
     navLinks.forEach(link => {
         link.classList.toggle("active", link.dataset.page === page);
@@ -223,11 +252,16 @@ function renderProducts() {
         const actions = document.createElement("div");
         actions.className = "product-actions";
 
-        const editBtn = document.createElement("button");
-        editBtn.className = "product-action-btn";
-        editBtn.innerHTML = '<i class="fa-solid fa-pen"></i>';
-        editBtn.title = "Edit Product";
-        editBtn.addEventListener("click", () => editProduct(product.id));
+
+const editBtn = document.createElement("button");
+editBtn.className = "product-action-btn";
+editBtn.innerHTML = '<i class="fa-solid fa-pen"></i>';
+editBtn.title = "Edit Product";
+
+editBtn.addEventListener("click", () => {
+    window.location.href = "404.html";
+});
+
 
         const deleteBtn = document.createElement("button");
         deleteBtn.className = "product-action-btn delete";
@@ -1156,3 +1190,33 @@ if (performanceCanvas && typeof Chart !== "undefined") {
         }
     });
 }
+
+/* RESTORE ADMIN DASHBOARD SECTION */
+
+function restoreAdminPage() {
+
+    const page = window.location.hash.replace("#", "");
+
+    if (page && document.getElementById(page)) {
+        showAdminPageWithoutHistory(page);
+    }
+}
+
+function showAdminPageWithoutHistory(page) {
+
+    const selected = document.getElementById(page);
+
+    if (!selected) return;
+
+    document.querySelectorAll(".page-section").forEach(section => {
+        section.classList.toggle("active", section === selected);
+    });
+
+    document.querySelectorAll(".nav-links a").forEach(link => {
+        link.classList.toggle("active", link.dataset.page === page);
+    });
+}
+
+restoreAdminPage();
+
+window.addEventListener("popstate", restoreAdminPage);
