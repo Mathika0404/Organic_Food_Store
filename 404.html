@@ -1,0 +1,608 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>404 - Page Not Found | Greenora</title>
+
+    <!-- GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-green: #204B30;
+            --dark-green: #183C27;
+            --olive-green: #819C5B;
+            --natural-green: #80A96B;
+            --light-green: #C7D99E;
+            --pale-green: #E4EDDA;
+            --mint: #EDF3E6;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* MAIN PAGE */
+
+        .error-page {
+            min-height: 100vh;
+            width: 100%;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+
+            background:
+                radial-gradient(circle at 15% 20%, #e4edda 0%, transparent 35%),
+                radial-gradient(circle at 85% 80%, #d5e5c8 0%, transparent 35%),
+                #f8faf5;
+
+            padding: 35px 20px;
+        }
+
+        .error-container {
+            width: 100%;
+            max-width: 1100px;
+            position: relative;
+            z-index: 2;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* BACKGROUND CIRCLES */
+
+        .error-bg-circle {
+            position: absolute;
+            border-radius: 50%;
+            border: 1px solid rgba(32, 75, 48, 0.10);
+            animation: circleFloat 8s ease-in-out infinite;
+        }
+
+        .circle-one {
+            width: 450px;
+            height: 450px;
+            top: -180px;
+            left: -150px;
+        }
+
+        .circle-two {
+            width: 550px;
+            height: 550px;
+            bottom: -250px;
+            right: -150px;
+            animation-delay: 2s;
+        }
+
+        @keyframes circleFloat {
+            0%, 100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        /* LOGO */
+
+        .error-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            text-decoration: none;
+            color: var(--primary-green);
+
+            font-size: 23px;
+            font-weight: 800;
+            letter-spacing: 2px;
+        }
+
+        .error-logo i {
+            font-size: 27px;
+            color: var(--natural-green);
+        }
+
+        /* CONTENT */
+
+        .error-content {
+            width: 100%;
+            max-width: 650px;
+            text-align: center;
+            padding: 35px 15px 20px;
+        }
+
+        /* 404 ILLUSTRATION */
+
+        .error-illustration {
+            position: relative;
+            width: 100%;
+            height: 210px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            margin-bottom: 10px;
+        }
+
+        .error-number {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(110px, 19vw, 190px);
+            font-weight: 800;
+            line-height: 1;
+            letter-spacing: -8px;
+            color: var(--primary-green);
+
+            animation: numberReveal 1s ease forwards;
+        }
+
+        .error-number span {
+            color: var(--olive-green);
+        }
+
+        @keyframes numberReveal {
+            from {
+                opacity: 0;
+                transform: translateY(35px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* LEAVES */
+
+        .leaf {
+            position: absolute;
+            color: var(--natural-green);
+            font-size: 45px;
+            animation: leafFloat 4s ease-in-out infinite;
+        }
+
+        .leaf-one {
+            top: 20px;
+            left: 19%;
+            transform: rotate(-35deg);
+        }
+
+        .leaf-two {
+            bottom: 15px;
+            right: 18%;
+            color: var(--olive-green);
+            font-size: 35px;
+            animation-delay: 1s;
+        }
+
+        .small-leaf {
+            position: absolute;
+            right: 26%;
+            top: 10px;
+            color: var(--olive-green);
+            font-size: 25px;
+            animation: leafFloat 3s ease-in-out infinite;
+        }
+
+        @keyframes leafFloat {
+            0%, 100% {
+                transform: translateY(0) rotate(-10deg);
+            }
+
+            50% {
+                transform: translateY(-12px) rotate(10deg);
+            }
+        }
+
+        /* LABEL */
+
+        .error-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+
+            background: #e4edda;
+            color: var(--primary-green);
+
+            padding: 9px 18px;
+            border-radius: 50px;
+
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 2px;
+
+            margin-bottom: 20px;
+        }
+
+        /* HEADING */
+
+        .error-content h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(32px, 5vw, 53px);
+            line-height: 1.2;
+            color: var(--dark-green);
+            margin-bottom: 18px;
+        }
+
+        .error-content h1 span {
+            color: var(--olive-green);
+        }
+
+        .error-description {
+            max-width: 490px;
+            margin: 0 auto;
+
+            color: #718071;
+            font-size: 15px;
+            line-height: 1.9;
+        }
+
+        /* BUTTONS */
+
+        .error-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 32px;
+            flex-wrap: wrap;
+        }
+
+        .error-back-btn,
+        .error-home-btn {
+            min-width: 165px;
+            min-height: 52px;
+            padding: 14px 25px;
+
+            border-radius: 50px;
+
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+
+            font-family: 'DM Sans', sans-serif;
+            font-size: 14px;
+            font-weight: 700;
+
+            text-decoration: none;
+            cursor: pointer;
+
+            transition: all 0.35s ease;
+        }
+
+        .error-back-btn {
+            background: var(--primary-green);
+            color: #fff;
+            border: 1px solid var(--primary-green);
+        }
+
+        .error-home-btn {
+            background: transparent;
+            color: var(--primary-green);
+            border: 1px solid var(--primary-green);
+        }
+
+        .error-back-btn:hover {
+            background: var(--dark-green);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(32, 75, 48, 0.2);
+        }
+
+        .error-home-btn:hover {
+            background: var(--primary-green);
+            color: #fff;
+            transform: translateY(-5px);
+        }
+
+        /* BOTTOM TEXT */
+
+        .error-bottom-text {
+            margin-top: 45px;
+            color: #819477;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        .error-bottom-text i {
+            color: var(--natural-green);
+            margin-right: 5px;
+        }
+
+        /* FOOTER */
+
+        .error-footer {
+            width: 100%;
+            text-align: center;
+
+            border-top: 1px solid rgba(32, 75, 48, 0.12);
+
+            padding-top: 20px;
+            margin-top: 25px;
+        }
+
+        .error-footer p {
+            font-size: 11px;
+            color: #899487;
+        }
+
+        /* TABLET */
+
+        @media (max-width: 768px) {
+
+            .error-page {
+                padding: 30px 18px;
+            }
+
+            .error-content {
+                padding-top: 45px;
+            }
+
+            .error-illustration {
+                height: 180px;
+            }
+
+            .leaf-one {
+                left: 10%;
+            }
+
+            .leaf-two {
+                right: 10%;
+            }
+
+            .small-leaf {
+                right: 20%;
+            }
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 480px) {
+
+            .error-page {
+                min-height: 100svh;
+                padding: 25px 16px;
+            }
+
+            .error-logo {
+                font-size: 20px;
+            }
+
+            .error-content {
+                padding: 40px 0 20px;
+            }
+
+            .error-illustration {
+                height: 145px;
+            }
+
+            .error-number {
+                font-size: 115px;
+                letter-spacing: -5px;
+            }
+
+            .leaf-one {
+                font-size: 28px;
+                left: 5%;
+                top: 10px;
+            }
+
+            .leaf-two {
+                font-size: 27px;
+                right: 5%;
+                bottom: 10px;
+            }
+
+            .small-leaf {
+                font-size: 18px;
+                right: 16%;
+            }
+
+            .error-content h1 {
+                font-size: 33px;
+            }
+
+            .error-description {
+                font-size: 13px;
+                line-height: 1.8;
+                padding: 0 5px;
+            }
+
+            .error-buttons {
+                flex-direction: column;
+                align-items: center;
+                gap: 12px;
+                margin-top: 27px;
+            }
+
+            .error-back-btn,
+            .error-home-btn {
+                width: 100%;
+                max-width: 260px;
+            }
+
+            .error-bottom-text {
+                margin-top: 35px;
+                font-size: 10px;
+            }
+
+            .error-footer p {
+                font-size: 10px;
+            }
+        }
+
+        /* EXTRA SMALL MOBILE */
+
+        @media (max-width: 350px) {
+
+            .error-number {
+                font-size: 100px;
+            }
+
+            .error-content h1 {
+                font-size: 29px;
+            }
+
+            .error-label {
+                font-size: 9px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <main class="error-page">
+
+        <div class="error-bg-circle circle-one"></div>
+        <div class="error-bg-circle circle-two"></div>
+
+        <div class="error-container">
+
+            <!-- LOGO -->
+
+            <a href="index.html" class="error-logo">
+                <i class="fa-solid fa-leaf"></i>
+                <span>GREENORA</span>
+            </a>
+
+            <!-- ERROR CONTENT -->
+
+            <div class="error-content">
+
+                <div class="error-illustration">
+
+                    <div class="leaf leaf-one">
+                        <i class="fa-solid fa-leaf"></i>
+                    </div>
+
+                    <div class="leaf leaf-two">
+                        <i class="fa-solid fa-leaf"></i>
+                    </div>
+
+                    <div class="error-number">
+                        4<span>0</span>4
+                    </div>
+
+                    <div class="small-leaf">
+                        <i class="fa-solid fa-seedling"></i>
+                    </div>
+
+                </div>
+
+                <span class="error-label">
+                    <i class="fa-solid fa-circle-exclamation"></i>
+                    PAGE NOT FOUND
+                </span>
+
+                <h1>
+                    Oops! This Page<br>
+                    <span>Has Gone Missing.</span>
+                </h1>
+
+                <p class="error-description">
+                    Looks like this page has wandered off into nature.
+                    Don't worry, let's help you find your way back.
+                </p>
+
+                <!-- BUTTONS -->
+
+<div class="error-buttons">
+
+    <button class="error-back-btn" onclick="goBack()">
+        <i class="fa-solid fa-arrow-left"></i>
+        Go Back
+    </button>
+
+    <button class="error-home-btn" onclick="goHome()">
+        <i class="fa-solid fa-house"></i>
+        Go Home
+    </button>
+
+</div>
+
+                <div class="error-bottom-text">
+                    <i class="fa-solid fa-leaf"></i>
+                    Growing Naturally, Living Better.
+                </div>
+
+            </div>
+
+            <!-- FOOTER -->
+
+            <div class="error-footer">
+                <p>© 2026 Greenora Organic Store. All Rights Reserved.</p>
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- JAVASCRIPT -->
+
+    <script>
+// GO BACK — return to the exact dashboard and section that opened this page
+function goBack() {
+    const fromUser = sessionStorage.getItem("greenoraFromUserDashboard");
+    const userSection = sessionStorage.getItem("greenoraUserReturnSection");
+    if (fromUser === "true" && userSection) {
+        window.location.href = "user-dashboard.html?returnSection=" + encodeURIComponent(userSection);
+        return;
+    }
+
+    const fromAdmin = sessionStorage.getItem("greenoraFromDashboard");
+    const adminSection = sessionStorage.getItem("greenoraReturnSection");
+    if (fromAdmin === "true" && adminSection) {
+        window.location.href = "admin-dashboard.html?returnSection=" + encodeURIComponent(adminSection);
+        return;
+    }
+
+    if (window.history.length > 1) window.history.back();
+    else window.location.href = "index.html";
+}
+
+// GO HOME — dashboard users return to their own dashboard landing page
+function goHome() {
+    if (sessionStorage.getItem("greenoraFromUserDashboard") === "true") {
+        sessionStorage.removeItem("greenoraUserReturnSection");
+        sessionStorage.removeItem("greenoraFromUserDashboard");
+        window.location.href = "user-dashboard.html?returnSection=overview";
+        return;
+    }
+
+    if (sessionStorage.getItem("greenoraFromDashboard") === "true") {
+        sessionStorage.removeItem("greenoraReturnSection");
+        sessionStorage.removeItem("greenoraFromDashboard");
+        window.location.href = "admin-dashboard.html?returnSection=overview";
+        return;
+    }
+
+    window.location.href = "index.html";
+}
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#204B30">
+  <title>User Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="css/user-dashboard.css">
+</head>
+<body>
+<div class="dashboard">
+  <aside class="sidebar" id="sidebar">
+    <a class="brand" href="index.html"><img src="images/stackly_white_logo.webp" alt="Greenora"></a>
+    <p class="sidebar-label">MY PROFILE</p>
+    <nav class="nav-links" aria-label="User dashboard navigation">
+      <a href="#overview" class="active" data-page="overview"><i class="fa-solid fa-house"></i><span>Dashboard</span></a>
+      <a href="#shop" data-page="shop"><i class="fa-solid fa-leaf"></i><span>Shop Organic</span></a>
+      <a href="#orders" data-page="orders"><i class="fa-solid fa-box-open"></i><span>My Orders</span></a>
+      <a href="#wishlist" data-page="wishlist"><i class="fa-regular fa-heart"></i><span>My Wishlist</span></a>
+      <a href="#rewards" data-page="rewards"><i class="fa-solid fa-gift"></i><span>Offers & Rewards</span></a>
+      <a href="#profile" data-page="profile"><i class="fa-regular fa-user"></i><span>My Profile</span></a>
+    </nav>
+    <div class="sidebar-bottom">
+      <div class="sidebar-help"><i class="fa-regular fa-circle-question"></i><div><strong>Need help?</strong><span>We're here for you</span></div></div>
+      <a href="index.html" class="logout-link" onclick="return confirm('Are you sure you want to logout?')"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
+    </div>
+  </aside>
+  <div class="mobile-overlay" id="overlay"></div>
+  <main class="main">
+    <header class="topbar">
+      <div class="top-left">
+        <button class="menu-btn" id="menuBtn" aria-label="Open menu"><i class="fa-solid fa-bars"></i></button>
+        <div><span class="eyebrow">CUSTOMER SPACE</span><h2 id="pageTitle">My Dashboard</h2></div>
+      </div>
+      <a href="index.html" class="mobile-nav-logo"><img src="images/stackly_logo.webp" alt="Greenora"></a>
+      <div class="top-right">
+        <button class="icon-btn" id="notificationBtn" aria-label="Notifications"><i class="fa-regular fa-bell"></i><span class="notification-dot"></span></button>
+        <div class="profile">
+          <div class="profile-avatar" id="topAvatar">G</div>
+          <div class="profile-info"><strong id="topName">Our Guest</strong><span>Valued Customer</span></div>
+        </div>
+      </div>
+    </header>
+
+    <div class="content">
+      <!-- DASHBOARD -->
+      <section class="page-section active" id="overview">
+        <div class="welcome">
+          <div><span class="eyebrow">A FRESHER WAY TO LIVE</span><h1>Welcome back, <span id="welcomeName">there</span>!</h1><p>Your healthy choices are growing into a beautiful habit.</p></div>
+          <div class="date-label"><i class="fa-regular fa-calendar"></i><span id="currentDate"></span></div>
+        </div>
+        <div class="hero-banner">
+          <div class="hero-copy"><span class="hero-tag">FRESH • NATURAL • LOCAL</span><h2>Good food.<br><em>Good mood.</em></h2><p>Bring home nature's goodness with handpicked organic essentials.</p><button class="primary-btn" data-go="shop">Explore Organic Store <i class="fa-solid fa-arrow-right"></i></button></div>
+          <div class="hero-art"><i class="fa-solid fa-leaf"></i><span>100%<br>Natural</span></div>
+        </div>
+        <div class="stats-grid">
+          <article class="stat-card"><div class="stat-top"><div class="stat-icon"><i class="fa-solid fa-bag-shopping"></i></div><span class="stat-note">All time</span></div><h3 id="orderCount">08</h3><p>Total Orders</p></article>
+          <article class="stat-card"><div class="stat-top"><div class="stat-icon"><i class="fa-solid fa-truck-fast"></i></div><span class="stat-note">On the way</span></div><h3 id="activeCount">02</h3><p>Active Deliveries</p></article>
+          <article class="stat-card"><div class="stat-top"><div class="stat-icon"><i class="fa-regular fa-heart"></i></div><span class="stat-note">Saved items</span></div><h3 id="wishlistCount">04</h3><p>Wishlist Items</p></article>
+          <article class="stat-card"><div class="stat-top"><div class="stat-icon"><i class="fa-solid fa-coins"></i></div><span class="stat-note">Green points</span></div><h3>250</h3><p>Reward Points</p></article>
+        </div>
+        <div class="section-heading"><div><span class="eyebrow">HANDPICKED FOR YOU</span><h2>Popular organic picks</h2></div><button class="text-btn" data-go="shop">View all <i class="fa-solid fa-arrow-right"></i></button></div>
+        <div class="product-grid compact-grid" id="featuredProducts"></div>
+        <div class="section-heading order-heading"><div><span class="eyebrow">YOUR RECENT ACTIVITY</span><h2>Recent orders</h2></div><button class="text-btn" data-go="orders">View order history <i class="fa-solid fa-arrow-right"></i></button></div>
+        <div class="table-panel"><div class="table-wrap"><table><thead><tr><th>ORDER ID</th><th>ORDER DATE</th><th>ITEMS</th><th>AMOUNT</th><th>STATUS</th><th></th></tr></thead><tbody id="recentOrdersBody"></tbody></table></div></div>
+      </section>
+
+      <!-- SHOP -->
+      <section class="page-section" id="shop">
+        <div class="page-intro"><div><span class="eyebrow">FROM FARM TO YOUR HOME</span><h1>Shop Organic</h1><p>Discover fresh, thoughtfully sourced everyday essentials.</p></div><span class="fresh-pill"><i class="fa-solid fa-seedling"></i> Fresh picks daily</span></div>
+        <div class="shop-toolbar"><label class="search-box"><i class="fa-solid fa-magnifying-glass"></i><input id="productSearch" type="search" placeholder="Search fruits, vegetables, grains..."></label><select id="categoryFilter" aria-label="Filter category"><option value="all">All categories</option><option>Fruits</option><option>Vegetables</option><option>Grains</option><option>Dairy</option><option>Pantry</option></select></div>
+        <div class="category-chips" id="categoryChips"><button class="chip active" data-category="all">All</button><button class="chip" data-category="Fruits">Fruits</button><button class="chip" data-category="Vegetables">Vegetables</button><button class="chip" data-category="Grains">Grains</button><button class="chip" data-category="Dairy">Dairy</button><button class="chip" data-category="Pantry">Pantry</button></div>
+        <div class="product-grid" id="shopProducts"></div>
+      </section>
+
+      <!-- ORDERS -->
+      <section class="page-section" id="orders">
+        <div class="page-intro"><div><span class="eyebrow">EVERY ORDER, ONE PLACE</span><h1>My Orders</h1><p>Follow your order journey from confirmation to doorstep.</p></div></div>
+        <div class="order-summary-cards"><div class="mini-summary"><i class="fa-solid fa-box"></i><span>All orders</span><strong id="allOrdersMetric">08</strong></div><div class="mini-summary"><i class="fa-solid fa-truck"></i><span>In delivery</span><strong>02</strong></div><div class="mini-summary"><i class="fa-solid fa-circle-check"></i><span>Delivered</span><strong>06</strong></div></div>
+        <div class="table-panel"><div class="panel-heading"><div><h3>Order history</h3><p>View your purchases and delivery status.</p></div><select id="orderFilter"><option value="all">All orders</option><option value="Processing">Processing</option><option value="In transit">In transit</option><option value="Delivered">Delivered</option></select></div><div class="table-wrap"><table><thead><tr><th>ORDER ID</th><th>DATE</th><th>ITEMS</th><th>TOTAL</th><th>STATUS</th><th>ACTION</th></tr></thead><tbody id="ordersBody"></tbody></table></div></div>
+      </section>
+
+      <!-- WISHLIST -->
+      <section class="page-section" id="wishlist">
+        <div class="page-intro"><div><span class="eyebrow">SAVE YOUR FAVOURITES</span><h1>My Wishlist</h1><p>Your favourite natural picks, ready when you are.</p></div></div>
+        <div class="wishlist-note"><i class="fa-regular fa-heart"></i><span>Keep the goodness close. Add your favourite products to your cart whenever you're ready.</span></div>
+        <div class="product-grid" id="wishlistProducts"></div>
+      </section>
+
+      <!-- REWARDS -->
+      <section class="page-section" id="rewards">
+        <div class="page-intro"><div><span class="eyebrow">A LITTLE THANK YOU</span><h1>Offers & Rewards</h1><p>Enjoy more goodness with exclusive stackly benefits.</p></div></div>
+        <div class="rewards-hero"><div><span class="eyebrow">YOUR BALANCE</span><h2>250 <small>points</small></h2><p>You're just 250 points away from your next reward.</p><div class="points-track"><span></span></div><small>250 / 500 points to unlock ₹100 off</small></div><i class="fa-solid fa-award"></i></div>
+        <div class="section-heading"><div><span class="eyebrow">MADE FOR YOU</span><h2>Available coupons</h2></div></div>
+        <div class="coupon-grid">
+          <article class="coupon-card"><div class="coupon-value">15% <small>OFF</small></div><div class="coupon-copy"><strong>FRESH15</strong><p>Get 15% off your next organic order.</p><span>Min. purchase ₹499</span></div><button class="copy-btn" data-code="FRESH15"><i class="fa-regular fa-copy"></i> Copy</button></article>
+          <article class="coupon-card"><div class="coupon-value">₹100 <small>OFF</small></div><div class="coupon-copy"><strong>GREEN100</strong><p>Save ₹100 on your healthy basket.</p><span>Min. purchase ₹999</span></div><button class="copy-btn" data-code="GREEN100"><i class="fa-regular fa-copy"></i> Copy</button></article>
+          <article class="coupon-card"><div class="coupon-value">FREE <small>SHIP</small></div><div class="coupon-copy"><strong>FREESHIP</strong><p>Enjoy free delivery on your order.</p><span>Min. purchase ₹399</span></div><button class="copy-btn" data-code="FREESHIP"><i class="fa-regular fa-copy"></i> Copy</button></article>
+        </div>
+      </section>
+
+      <!-- PROFILE -->
+      <section class="page-section" id="profile">
+        <div class="page-intro"><div><span class="eyebrow">YOUR ACCOUNT, YOUR WAY</span><h1>My Profile</h1><p>Manage your personal details and delivery information.</p></div></div>
+        <div class="profile-layout">
+          <div class="profile-card"><div class="large-avatar" id="profileAvatar">G</div><h3 id="profileCardName">Our Guest</h3><p id="profileCardEmail">customer@greenora.com</p><span class="member-pill"><i class="fa-solid fa-seedling"></i> Stackly Member</span></div>
+          <form class="profile-form" id="profileForm">
+            <div class="form-heading"><h3>Personal information</h3><p>Update your details below.</p></div>
+            <div class="form-grid"><label>Full name<input id="fullName" name="fullName" type="text" placeholder="Enter your name" required></label><label>Email address<input id="emailAddress" name="email" type="email" placeholder="Enter your email" required></label><label>Phone number<input id="phoneNumber" name="phone" type="tel" placeholder="+91 98765 43210"></label><label>City<input id="city" name="city" type="text" placeholder="Your city"></label><label class="full-field">Delivery address<textarea id="deliveryAddress" name="address" rows="3" placeholder="Enter your complete delivery address"></textarea></label></div>
+            <div class="form-actions"><button type="reset" class="secondary-btn">Reset</button><button type="submit" class="primary-btn"><i class="fa-solid fa-floppy-disk"></i> Save Changes</button></div>
+          </form>
+        </div>
+      </section>
+    </div>
+    <footer class="dashboard-footer"><span>© 2026 Greenora. Growing goodness every day.</span><span>Fresh • Natural • Responsible</span></footer>
+  </main>
+</div>
+<div class="toast" id="toast" role="status"></div>
+<script src="js/user-dashboard.js"></script>
+</body>
+</html>

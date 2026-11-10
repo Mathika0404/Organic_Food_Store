@@ -1,0 +1,1622 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#173d27">
+
+    <title>Organic Food Store</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- PRELOADER -->
+    <div class="page-loader" id="pageLoader">
+        <div class="loader-content">
+
+            <div class="loader-logo">
+                <img src="images/stackly_white_logo.webp" alt="Stackly Logo">
+            </div>
+
+            <p>Freshness from nature</p>
+
+            <div class="loader-track">
+                <div class="loader-progress"></div>
+            </div>
+
+            <span class="loader-percent">100% NATURAL</span>
+
+        </div>
+    </div>
+
+
+    <!-- MAIN WEBSITE -->
+    <div class="website-wrapper" id="websiteWrapper">
+
+        <!-- TOPBAR -->
+        <div class="topbar">
+            <p>🌿 Fresh Organic Products Delivered To Your Doorstep</p>
+        </div>
+
+
+        <!-- NAVBAR -->
+
+<header class="navbar" id="navbar">
+
+    <!-- LOGO -->
+    <a href="#home" class="brand-logo">
+        <img src="images/stackly_logo.webp" alt="Stackly Logo">
+    </a>
+
+<nav class="nav-menu" id="navMenu">
+
+    <a href="index.html" class="nav-link active">Home</a>
+    <a href="about.html" class="nav-link">About</a>
+    <a href="service.html" class="nav-link">Service</a>
+    <a href="blogs.html" class="nav-link">Blogs</a>
+    <a href="contact.html" class="nav-link">Contact</a>
+    <a href="login.html" class="mobile-shop-btn">
+        Login <span>↗</span>
+    </a>
+
+</nav>
+
+    <!-- ACTIONS -->
+    <div class="nav-actions">
+
+        <a href="login.html" class="shop-button">
+            Login <span>↗</span>
+        </a>
+
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+    </div>
+
+</header>
+
+
+
+        <!-- HERO SECTION -->
+        <main>
+
+        <section class="hero-section" id="home">
+
+            <!-- BACKGROUND SLIDES -->
+            <div class="hero-slides">
+
+                <div class="hero-slide active"
+                    style="background-image:url('./images/home1.jpg')">
+                </div>
+
+                <div class="hero-slide"
+                    style="background-image:url('images/home2.jpg')">
+                </div>
+
+                <div class="hero-slide"
+                    style="background-image:url('images/home3.jpg')">
+                </div>
+
+            </div>
+
+            <div class="hero-overlay"></div>
+
+
+            <!-- HERO CONTENT -->
+            <div class="hero-container">
+
+                <div class="hero-content">
+
+                    <div class="hero-tag reveal-item">
+                        <span class="tag-icon">✳</span>
+                        100% ORGANIC & NATURAL
+                    </div>
+
+                    <h1 class="hero-title reveal-item">
+                        Eat Fresh.
+                        <span>Live Naturally.</span>
+                    </h1>
+
+                    <p class="hero-description reveal-item">
+                        Discover the goodness of nature with our fresh,
+                        organic and healthy food products. Grown naturally,
+                        delivered with love.
+                    </p>
+
+                    <div class="hero-buttons reveal-item">
+
+                        <a href="#products" class="primary-btn">
+                            Explore Products
+                            <span>↗</span>
+                        </a>
+
+                        <a href="#about" class="outline-btn">
+                            Discover More
+                            <span>→</span>
+                        </a>
+
+                    </div>
+
+                    <div class="hero-bottom-info reveal-item">
+
+                        <div class="customer-info">
+                            <div class="customer-avatars">
+                                <img src="https://i.pravatar.cc/80?img=47" alt="Customer">
+                                <img src="https://i.pravatar.cc/80?img=12" alt="Customer">
+                                <img src="https://i.pravatar.cc/80?img=32" alt="Customer">
+                            </div>
+
+                            <div>
+                                <h4>2,500+</h4>
+                                <p>Happy Customers</p>
+                            </div>
+                        </div>
+
+                        <div class="hero-rating">
+                            <span>★★★★★</span>
+                            <p>Trusted Organic Quality</p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- RIGHT FLOATING CARD -->
+                <div class="hero-side-card reveal-item">
+
+                    <div class="side-card-icon">🌱</div>
+
+                    <h3>Pure Nature.</h3>
+                    <p>Fresh from farm to your table.</p>
+
+                    <div class="side-card-line"></div>
+
+                    <div class="side-card-bottom">
+                        <span>100%</span>
+                        <small>Natural Goodness</small>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- SLIDER CONTROLS -->
+            <div class="slider-controls">
+
+                <div class="slider-pagination">
+                    <button class="slide-dot active" data-slide="0" aria-label="Slide 1"></button>
+                    <button class="slide-dot" data-slide="1" aria-label="Slide 2"></button>
+                    <button class="slide-dot" data-slide="2" aria-label="Slide 3"></button>
+                </div>
+
+                <div class="slider-count">
+                    <span id="currentSlide">01</span>
+                    <span class="count-divider"></span>
+                    <span>03</span>
+                </div>
+
+            </div>
+
+            <div class="scroll-indicator">
+                <span></span>
+                SCROLL TO EXPLORE
+            </div>
+
+        </section>
+
+
+        <!-- FEATURES SECTION -->
+        <section class="features-section" id="service">
+
+            <div class="features-container">
+
+                <div class="feature-card scroll-reveal">
+                    <div class="feature-icon">🌿</div>
+                    <div>
+                        <h3>100% Organic</h3>
+                        <p>Pure and natural ingredients.</p>
+                    </div>
+                </div>
+
+                <div class="feature-card scroll-reveal">
+                    <div class="feature-icon">🚚</div>
+                    <div>
+                        <h3>Fast Delivery</h3>
+                        <p>Fresh products at your doorstep.</p>
+                    </div>
+                </div>
+
+                <div class="feature-card scroll-reveal">
+                    <div class="feature-icon">🥬</div>
+                    <div>
+                        <h3>Farm Fresh</h3>
+                        <p>Directly sourced from farmers.</p>
+                    </div>
+                </div>
+
+                <div class="feature-card scroll-reveal">
+                    <div class="feature-icon">💚</div>
+                    <div>
+                        <h3>Healthy Living</h3>
+                        <p>Better food, better lifestyle.</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ABOUT INTRO -->
+        <section class="about-section" id="about">
+
+            <div class="about-container">
+
+                <div class="about-image scroll-reveal">
+
+                    <img src="images/nature.webp"
+                         alt="Organic green farm">
+
+                    <div class="about-image-label">
+                        <span>🌱</span>
+                        <div>
+                            <strong>Grown with Love</strong>
+                            <small>Rooted in Nature</small>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="about-content">
+
+                    <span class="section-label scroll-reveal">
+                        <span></span> ABOUT OUR ORGANIC PRODUCTS
+                    </span>
+
+                    <h2 class="scroll-reveal">
+                        Bringing Nature's
+                        <span>Goodness</span> To Your Table.
+                    </h2>
+
+                    <p class="scroll-reveal">
+                        We believe healthy living begins with healthy food.
+                        Our mission is to bring fresh, naturally grown and
+                        high-quality organic products to every home.
+                    </p>
+
+                    <div class="about-points scroll-reveal">
+
+                        <div>
+                            <span>✓</span>
+                            Freshly Selected Products
+                        </div>
+
+                        <div>
+                            <span>✓</span>
+                            Naturally Grown Ingredients
+                        </div>
+
+                        <div>
+                            <span>✓</span>
+                            Quality You Can Trust
+                        </div>
+
+                    </div>
+
+                    <a href="#products" class="about-button scroll-reveal">
+                        Explore Our Collection <span>↗</span>
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- CONTACT CTA -->
+        <section class="contact-section" id="contact">
+
+            <div class="contact-content scroll-reveal">
+                <span>GOOD FOOD. GOOD MOOD.</span>
+                <h2>Choose Natural.<br>Choose Better Living.</h2>
+                <p>Make every meal healthier with the goodness of organic food.</p>
+                <a href="#products" class="primary-btn">
+                    Start Shopping <span>↗</span>
+                </a>
+            </div>
+
+        </section>
+
+        
+
+
+<!-- ==========================================
+     GREENORA - ORGANIC SHOP SECTION
+========================================== -->
+
+<section class="organic-shop-section" id="organic-shop">
+
+    <div class="shop-container">
+
+        <!-- SHOP HEADER -->
+        <div class="shop-heading scroll-reveal">
+
+            <span class="shop-eyebrow">
+                <i class="fa-solid fa-leaf"></i>
+                FRESH & NATURAL
+            </span>
+
+            <h2>
+                Discover Our <span>Organic</span> Collection
+            </h2>
+
+            <p>
+                Explore nature's finest selection of fresh fruits,
+                vegetables, wholesome grains and healthy foods.
+                Pure goodness, straight from nature to your home.
+            </p>
+
+        </div>
+
+
+        <!-- CATEGORY NAVIGATION -->
+        <div class="shop-categories">
+
+            <button class="category-btn active" data-filter="all">
+                <i class="fa-solid fa-border-all"></i>
+                All Products
+            </button>
+
+            <button class="category-btn" data-filter="fruits">
+                <i class="fa-solid fa-apple-whole"></i>
+                Fruits
+            </button>
+
+            <button class="category-btn" data-filter="vegetables">
+                <i class="fa-solid fa-carrot"></i>
+                Vegetables
+            </button>
+
+            <button class="category-btn" data-filter="grains">
+                <i class="fa-solid fa-wheat-awn"></i>
+                Grains
+            </button>
+
+            <button class="category-btn" data-filter="healthy">
+                <i class="fa-solid fa-heart"></i>
+                Healthy Foods
+            </button>
+
+        </div>
+
+
+        <!-- PRODUCT GRID -->
+        <div class="organic-products-grid">
+
+
+            <!-- FRUIT 1 -->
+            <div class="organic-product-card" data-category="fruits">
+
+                <div class="product-image">
+
+                    <span class="product-badge">Organic</span>
+
+                    <a href="404.html" class="wishlist-btn">
+                        <i class="fa-regular fa-heart"></i>
+                    </a>
+
+                    <a href="404.html" class="product-image-link">
+                        <img src="images/apple.webp"
+                             alt="Organic Red Apples">
+                    </a>
+
+                    <a href="404.html" class="quick-view-btn">
+                        <i class="fa-regular fa-eye"></i>
+                        Quick View
+                    </a>
+
+                </div>
+
+                <div class="product-info">
+
+                    <span class="product-type">Fresh Fruits</span>
+
+                    <h3>
+                        <a href="404.html">Organic Red Apples</a>
+                    </h3>
+
+                    <div class="product-rating">
+                        <span>★★★★★</span>
+                        <small>4.8</small>
+                    </div>
+
+                    <div class="product-footer">
+                        <h4>₹180 <small>/ kg</small></h4>
+
+                        <a href="404.html" class="cart-btn">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                        </a>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- FRUIT 2 -->
+            <div class="organic-product-card" data-category="fruits">
+
+                <div class="product-image">
+
+                    <span class="product-badge">Fresh</span>
+
+                    <a href="404.html" class="wishlist-btn">
+                        <i class="fa-regular fa-heart"></i>
+                    </a>
+
+                    <a href="404.html" class="product-image-link">
+                        <img src="images/orange.webp"
+                             alt="Organic Oranges">
+                    </a>
+
+                    <a href="404.html" class="quick-view-btn">
+                        <i class="fa-regular fa-eye"></i>
+                        Quick View
+                    </a>
+
+                </div>
+
+                <div class="product-info">
+
+                    <span class="product-type">Fresh Fruits</span>
+
+                    <h3>
+                        <a href="404.html">Fresh Organic Oranges</a>
+                    </h3>
+
+                    <div class="product-rating">
+                        <span>★★★★★</span>
+                        <small>4.7</small>
+                    </div>
+
+                    <div class="product-footer">
+                        <h4>₹100 <small>/ kg</small></h4>
+
+                        <a href="404.html" class="cart-btn">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                        </a>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- VEGETABLE 1 -->
+            <div class="organic-product-card" data-category="vegetables">
+
+                <div class="product-image">
+
+                    <span class="product-badge">Natural</span>
+
+                    <a href="404.html" class="wishlist-btn">
+                        <i class="fa-regular fa-heart"></i>
+                    </a>
+
+                    <a href="404.html" class="product-image-link">
+                        <img src="images/carrot.webp"
+                             alt="Fresh Organic Carrots">
+                    </a>
+
+                    <a href="404.html" class="quick-view-btn">
+                        <i class="fa-regular fa-eye"></i>
+                        Quick View
+                    </a>
+
+                </div>
+
+                <div class="product-info">
+
+                    <span class="product-type">Fresh Vegetables</span>
+
+                    <h3>
+                        <a href="404.html">Natural Fresh Carrots</a>
+                    </h3>
+
+                    <div class="product-rating">
+                        <span>★★★★★</span>
+                        <small>4.7</small>
+                    </div>
+
+                    <div class="product-footer">
+                        <h4>₹60 <small>/ kg</small></h4>
+
+                        <a href="404.html" class="cart-btn">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                        </a>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- VEGETABLE 2 -->
+            <div class="organic-product-card" data-category="vegetables">
+
+                <div class="product-image">
+
+                    <span class="product-badge">Fresh</span>
+
+                    <a href="404.html" class="wishlist-btn">
+                        <i class="fa-regular fa-heart"></i>
+                    </a>
+
+                    <a href="404.html" class="product-image-link">
+                        <img src="images/tomato.webp"
+                             alt="Organic Tomatoes">
+                    </a>
+
+                    <a href="404.html" class="quick-view-btn">
+                        <i class="fa-regular fa-eye"></i>
+                        Quick View
+                    </a>
+
+                </div>
+
+                <div class="product-info">
+
+                    <span class="product-type">Fresh Vegetables</span>
+
+                    <h3>
+                        <a href="404.html">Organic Fresh Tomatoes</a>
+                    </h3>
+
+                    <div class="product-rating">
+                        <span>★★★★★</span>
+                        <small>4.9</small>
+                    </div>
+
+                    <div class="product-footer">
+                        <h4>₹45 <small>/ kg</small></h4>
+
+                        <a href="404.html" class="cart-btn">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                        </a>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- GRAIN 1 -->
+            <div class="organic-product-card" data-category="grains">
+
+                <div class="product-image">
+
+                    <span class="product-badge">Organic</span>
+
+                    <a href="404.html" class="wishlist-btn">
+                        <i class="fa-regular fa-heart"></i>
+                    </a>
+
+                    <a href="404.html" class="product-image-link">
+                        <img src="images/rice.webp"
+                             alt="Organic Brown Rice">
+                    </a>
+
+                    <a href="404.html" class="quick-view-btn">
+                        <i class="fa-regular fa-eye"></i>
+                        Quick View
+                    </a>
+
+                </div>
+
+                <div class="product-info">
+
+                    <span class="product-type">Organic Grains</span>
+
+                    <h3>
+                        <a href="404.html">Natural Brown Rice</a>
+                    </h3>
+
+                    <div class="product-rating">
+                        <span>★★★★★</span>
+                        <small>4.8</small>
+                    </div>
+
+                    <div class="product-footer">
+                        <h4>₹120 <small>/ kg</small></h4>
+
+                        <a href="404.html" class="cart-btn">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                        </a>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- GRAIN 2 -->
+            <div class="organic-product-card" data-category="grains">
+
+                <div class="product-image">
+
+                    <span class="product-badge">Healthy</span>
+
+                    <a href="404.html" class="wishlist-btn">
+                        <i class="fa-regular fa-heart"></i>
+                    </a>
+
+                    <a href="404.html" class="product-image-link">
+                        <img src="images/oats.webp"
+                             alt="Organic Oats">
+                    </a>
+
+                    <a href="404.html" class="quick-view-btn">
+                        <i class="fa-regular fa-eye"></i>
+                        Quick View
+                    </a>
+
+                </div>
+
+                <div class="product-info">
+
+                    <span class="product-type">Organic Grains</span>
+
+                    <h3>
+                        <a href="404.html">Whole Grain Oats</a>
+                    </h3>
+
+                    <div class="product-rating">
+                        <span>★★★★★</span>
+                        <small>4.8</small>
+                    </div>
+
+                    <div class="product-footer">
+                        <h4>₹150 <small>/ 500g</small></h4>
+
+                        <a href="404.html" class="cart-btn">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                        </a>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- HEALTHY FOOD 1 -->
+            <div class="organic-product-card" data-category="healthy">
+
+                <div class="product-image">
+
+                    <span class="product-badge">Healthy</span>
+
+                    <a href="404.html" class="wishlist-btn">
+                        <i class="fa-regular fa-heart"></i>
+                    </a>
+
+                    <a href="404.html" class="product-image-link">
+                        <img src="images/batham.webp"
+                             alt="Premium Organic Almonds">
+                    </a>
+
+                    <a href="404.html" class="quick-view-btn">
+                        <i class="fa-regular fa-eye"></i>
+                        Quick View
+                    </a>
+
+                </div>
+
+                <div class="product-info">
+
+                    <span class="product-type">Dry Fruits</span>
+
+                    <h3>
+                        <a href="404.html">Premium Organic Almonds</a>
+                    </h3>
+
+                    <div class="product-rating">
+                        <span>★★★★★</span>
+                        <small>4.9</small>
+                    </div>
+
+                    <div class="product-footer">
+                        <h4>₹450 <small>/ 500g</small></h4>
+
+                        <a href="404.html" class="cart-btn">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                        </a>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- HEALTHY FOOD 2 -->
+            <div class="organic-product-card" data-category="healthy">
+
+                <div class="product-image">
+
+                    <span class="product-badge">Natural</span>
+
+                    <a href="404.html" class="wishlist-btn">
+                        <i class="fa-regular fa-heart"></i>
+                    </a>
+
+                    <a href="404.html" class="product-image-link">
+                        <img src="images/honey.webp"
+                             alt="Pure Organic Honey">
+                    </a>
+
+                    <a href="404.html" class="quick-view-btn">
+                        <i class="fa-regular fa-eye"></i>
+                        Quick View
+                    </a>
+
+                </div>
+
+                <div class="product-info">
+
+                    <span class="product-type">Natural Foods</span>
+
+                    <h3>
+                        <a href="404.html">Pure Natural Honey</a>
+                    </h3>
+
+                    <div class="product-rating">
+                        <span>★★★★★</span>
+                        <small>4.8</small>
+                    </div>
+
+                    <div class="product-footer">
+                        <h4>₹250 <small>/ 500g</small></h4>
+
+                        <a href="404.html" class="cart-btn">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                        </a>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+        <!-- VIEW ALL PRODUCTS -->
+        <div class="shop-view-all">
+
+            <a href="404.html">
+                Explore All Products
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= WHY CHOOSE GREENORA ================= -->
+
+<section class="why-greenora-section">
+
+    <div class="why-greenora-container">
+
+        <!-- SECTION HEADING -->
+        <div class="why-greenora-heading">
+
+            <span class="why-eyebrow">
+                <i class="fa-solid fa-leaf"></i>
+                WHY STACKLY ORGANIC FOOD
+            </span>
+
+            <h2>
+                Good Food. <span>Good Life.</span>
+                <br>Better Tomorrow.
+            </h2>
+
+            <p>
+                We believe that healthy living begins with pure food.
+                That's why we bring nature's finest organic goodness
+                directly to your table.
+            </p>
+
+        </div>
+
+
+        <!-- MAIN CONTENT -->
+        <div class="why-greenora-content">
+
+<!-- FOUR IMAGE COLLAGE -->
+
+<div class="why-greenora-image why-image-collage">
+
+    <div class="collage-image collage-image-one">
+        <img src="images/collage1.webp"
+             alt="Organic green farm">
+    </div>
+
+    <div class="collage-image collage-image-two">
+        <img src="images/collage2.webp"
+             alt="Fresh organic vegetables">
+    </div>
+
+    <div class="collage-image collage-image-three">
+        <img src="images/collage3.webp"
+             alt="Fresh organic fruits">
+    </div>
+
+    <div class="collage-image collage-image-four">
+        <img src="images/collage4.webp"
+             alt="Organic food harvest">
+    </div>
+
+    <!-- CENTER BADGE -->
+    <div class="collage-center-badge">
+        <i class="fa-solid fa-leaf"></i>
+        <span>100%</span>
+        <small>ORGANIC</small>
+    </div>
+
+    <!-- BOTTOM LABEL -->
+    <div class="collage-bottom-label">
+        <i class="fa-solid fa-seedling"></i>
+        <div>
+            <h4>Nature's Best</h4>
+            <p>Freshness in Every Bite</p>
+        </div>
+    </div>
+
+</div>
+
+            <!-- RIGHT CONTENT -->
+            <div class="why-greenora-details">
+
+                <div class="why-feature-card">
+
+                    <div class="why-feature-icon">
+                        <i class="fa-solid fa-seedling"></i>
+                    </div>
+
+                    <div class="why-feature-info">
+                        <h3>100% Organic</h3>
+                        <p>
+                            Carefully selected organic products
+                            for a naturally healthy lifestyle.
+                        </p>
+                    </div>
+
+                    <span class="why-feature-number">01</span>
+
+                </div>
+
+
+                <div class="why-feature-card">
+
+                    <div class="why-feature-icon">
+                        <i class="fa-solid fa-apple-whole"></i>
+                    </div>
+
+                    <div class="why-feature-info">
+                        <h3>Fresh & Natural</h3>
+                        <p>
+                            Enjoy naturally fresh goodness
+                            with quality you can trust.
+                        </p>
+                    </div>
+
+                    <span class="why-feature-number">02</span>
+
+                </div>
+
+
+                <div class="why-feature-card">
+
+                    <div class="why-feature-icon">
+                        <i class="fa-solid fa-earth-asia"></i>
+                    </div>
+
+                    <div class="why-feature-info">
+                        <h3>Eco-Friendly</h3>
+                        <p>
+                            We value nature and encourage
+                            responsible, sustainable choices.
+                        </p>
+                    </div>
+
+                    <span class="why-feature-number">03</span>
+
+                </div>
+
+
+                <div class="why-feature-card">
+
+                    <div class="why-feature-icon">
+                        <i class="fa-solid fa-heart-pulse"></i>
+                    </div>
+
+                    <div class="why-feature-info">
+                        <h3>Healthy Living</h3>
+                        <p>
+                            Make better food choices and
+                            bring more wellness into everyday life.
+                        </p>
+                    </div>
+
+                    <span class="why-feature-number">04</span>
+
+                </div>
+
+
+                <a href="404.html" class="why-explore-btn">
+                    Explore Our Story
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= END WHY CHOOSE GREENORA ================= -->
+
+<!-- ================= ORGANIC FARMING PROCESS ================= -->
+
+<section class="farming-process-section" id="farming-process">
+
+    <div class="farming-process-container">
+
+        <!-- SECTION HEADING -->
+        <div class="farming-heading process-reveal">
+
+            <span class="farming-eyebrow">
+                <i class="fa-solid fa-seedling"></i>
+                FROM FARM TO YOUR TABLE
+            </span>
+
+            <h2>
+                Nature's Journey,
+                <span>Our Promise.</span>
+            </h2>
+
+            <p>
+                Every fresh product has a beautiful journey.
+                Discover how we bring nature's goodness
+                from organic farms straight to your home.
+            </p>
+
+        </div>
+
+
+        <!-- PROCESS TIMELINE -->
+        <div class="farming-process-grid">
+
+            <!-- STEP 01 -->
+            <div class="farming-process-card process-reveal">
+
+                <div class="farming-image-wrap">
+
+                    <img src="images/collage2.webp"
+                         alt="Natural organic farming">
+
+                    <span class="farming-step-number">01</span>
+
+                    <div class="farming-image-overlay">
+                        <i class="fa-solid fa-seedling"></i>
+                    </div>
+
+                </div>
+
+                <div class="farming-card-content">
+
+                    <span class="farming-step-label">STEP ONE</span>
+
+                    <h3>Naturally Grown</h3>
+
+                    <p>
+                        We carefully select natural growing methods
+                        and quality produce to bring goodness
+                        closer to your everyday life.
+                    </p>
+
+                    <a href="404.html" class="farming-learn-link">
+                        Discover More
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- STEP 02 -->
+            <div class="farming-process-card process-reveal">
+
+                <div class="farming-image-wrap">
+
+                    <img src="images/harvested.webp"
+                         alt="Fresh organic food harvesting">
+
+                    <span class="farming-step-number">02</span>
+
+                    <div class="farming-image-overlay">
+                        <i class="fa-solid fa-basket-shopping"></i>
+                    </div>
+
+                </div>
+
+                <div class="farming-card-content">
+
+                    <span class="farming-step-label">STEP TWO</span>
+
+                    <h3>Freshly Harvested</h3>
+
+                    <p>
+                        Fresh fruits and vegetables are carefully
+                        harvested and selected to maintain
+                        their natural quality and freshness.
+                    </p>
+
+                    <a href="404.html" class="farming-learn-link">
+                        Discover More
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- STEP 03 -->
+            <div class="farming-process-card process-reveal">
+
+                <div class="farming-image-wrap">
+
+                    <img src="images/delivery.webp"
+                         alt="Fresh organic food delivery">
+
+                    <span class="farming-step-number">03</span>
+
+                    <div class="farming-image-overlay">
+                        <i class="fa-solid fa-truck-fast"></i>
+                    </div>
+
+                </div>
+
+                <div class="farming-card-content">
+
+                    <span class="farming-step-label">STEP THREE</span>
+
+                    <h3>Delivered to You</h3>
+
+                    <p>
+                        We carefully pack your selected products
+                        and bring fresh organic goodness
+                        right to your doorstep.
+                    </p>
+
+                    <a href="404.html" class="farming-learn-link">
+                        Discover More
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- BOTTOM MESSAGE -->
+        <div class="farming-bottom-banner process-reveal">
+
+            <div class="farming-banner-icon">
+                <i class="fa-solid fa-leaf"></i>
+            </div>
+
+            <div class="farming-banner-content">
+                <h3>From Our Farms to Your Family</h3>
+                <p>
+                    Choose natural goodness. Celebrate healthier living.
+                </p>
+            </div>
+
+            <a href="404.html" class="farming-banner-btn">
+                Explore Our Products
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= END FARMING PROCESS ================= -->
+
+<!-- ================= FAQ SECTION ================= -->
+
+<section class="greenora-faq-section" id="faq">
+
+    <div class="faq-container">
+
+        <!-- FAQ HEADING -->
+        <div class="faq-heading faq-reveal">
+
+            <span class="faq-eyebrow">
+                <i class="fa-solid fa-circle-question"></i>
+                GOT QUESTIONS?
+            </span>
+
+            <h2>
+                Frequently Asked
+                <span>Questions.</span>
+            </h2>
+
+            <p>
+                Everything you need to know about our organic
+                products, freshness, ordering and delivery.
+            </p>
+
+        </div>
+
+
+        <!-- FAQ MAIN CONTENT -->
+        <div class="faq-main-content">
+
+            <!-- LEFT SIDE -->
+            <div class="faq-left faq-reveal">
+
+                <div class="faq-image-grid">
+
+                    <div class="faq-img faq-img-one">
+                        <img src="images/organic_food.webp"
+                             alt="Fresh organic food">
+                    </div>
+
+                    <div class="faq-img faq-img-two">
+                        <img src="images/organic_veg.webp"
+                             alt="Fresh organic vegetables">
+                    </div>
+
+                    <div class="faq-img faq-img-three">
+                        <img src="images/organic_fruits.webp"
+                             alt="Fresh organic fruits">
+                    </div>
+
+                </div>
+
+                <div class="faq-contact-card">
+
+                    <div class="faq-contact-icon">
+                        <i class="fa-solid fa-headset"></i>
+                    </div>
+
+                    <div class="faq-contact-text">
+                        <span>Still have questions?</span>
+                        <h3>We're here to help!</h3>
+                        <a href="contact.html">
+                            Contact Our Team
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- RIGHT SIDE FAQ ACCORDION -->
+            <div class="faq-right faq-reveal">
+
+                <!-- FAQ 1 -->
+                <div class="faq-item active">
+
+                    <button class="faq-question" type="button">
+
+                        <span class="faq-question-number">01</span>
+
+                        <span class="faq-question-text">
+                            What makes stackly products organic?
+                        </span>
+
+                        <span class="faq-toggle-icon">
+                            <i class="fa-solid fa-plus"></i>
+                        </span>
+
+                    </button>
+
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            Our products are selected with a focus on
+                            natural quality, responsible sourcing and
+                            freshness. Product-specific certifications
+                            and details can be checked on their labels.
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <!-- FAQ 2 -->
+                <div class="faq-item">
+
+                    <button class="faq-question" type="button">
+
+                        <span class="faq-question-number">02</span>
+
+                        <span class="faq-question-text">
+                            How fresh are your fruits and vegetables?
+                        </span>
+
+                        <span class="faq-toggle-icon">
+                            <i class="fa-solid fa-plus"></i>
+                        </span>
+
+                    </button>
+
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            We focus on carefully selecting and handling
+                            fresh produce. Actual freshness may vary
+                            depending on the product and availability.
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <!-- FAQ 3 -->
+                <div class="faq-item">
+
+                    <button class="faq-question" type="button">
+
+                        <span class="faq-question-number">03</span>
+
+                        <span class="faq-question-text">
+                            Do you deliver organic products to my location?
+                        </span>
+
+                        <span class="faq-toggle-icon">
+                            <i class="fa-solid fa-plus"></i>
+                        </span>
+
+                    </button>
+
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            Delivery availability depends on your
+                            location and our service coverage.
+                            You can check delivery availability while
+                            placing your order.
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <!-- FAQ 4 -->
+                <div class="faq-item">
+
+                    <button class="faq-question" type="button">
+
+                        <span class="faq-question-number">04</span>
+
+                        <span class="faq-question-text">
+                            How can I place an order?
+                        </span>
+
+                        <span class="faq-toggle-icon">
+                            <i class="fa-solid fa-plus"></i>
+                        </span>
+
+                    </button>
+
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            Browse our product collection, choose
+                            your favourite items and follow the
+                            checkout process to place your order.
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <!-- FAQ 5 -->
+                <div class="faq-item">
+
+                    <button class="faq-question" type="button">
+
+                        <span class="faq-question-number">05</span>
+
+                        <span class="faq-question-text">
+                            What payment methods do you accept?
+                        </span>
+
+                        <span class="faq-toggle-icon">
+                            <i class="fa-solid fa-plus"></i>
+                        </span>
+
+                    </button>
+
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            Available payment methods will be displayed
+                            during checkout. You can select from the
+                            payment options supported by the store.
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <!-- FAQ 6 -->
+                <div class="faq-item">
+
+                    <button class="faq-question" type="button">
+
+                        <span class="faq-question-number">06</span>
+
+                        <span class="faq-question-text">
+                            Can I return or cancel my order?
+                        </span>
+
+                        <span class="faq-toggle-icon">
+                            <i class="fa-solid fa-plus"></i>
+                        </span>
+
+                    </button>
+
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            Return and cancellation eligibility depends
+                            on the product and store policy. Please
+                            contact our support team for assistance
+                            with your order.
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <!-- FAQ 7 -->
+                <div class="faq-item">
+
+                    <button class="faq-question" type="button">
+
+                        <span class="faq-question-number">07</span>
+
+                        <span class="faq-question-text">
+                            How should I store organic products?
+                        </span>
+
+                        <span class="faq-toggle-icon">
+                            <i class="fa-solid fa-plus"></i>
+                        </span>
+
+                    </button>
+
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            Storage requirements vary by product.
+                            Follow the storage instructions provided
+                            on each product's packaging for best results.
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= END FAQ SECTION ================= -->
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+
+    <div class="footer-container">
+
+        <!-- FOOTER BRAND -->
+        <div class="footer-column footer-brand">
+
+            <a href="index.html" class="footer-logo">
+                <img src="images/stackly_white_logo.webp" alt="Organic Store Logo">
+            </a>
+
+            <p class="footer-description">
+                Bringing nature closer to your home with fresh,
+                healthy and 100% natural organic products.
+                Eat fresh, live healthy and grow naturally with us.
+            </p>
+
+            <!-- SOCIAL ICONS -->
+            <div class="footer-social">
+
+                <a href="404.html" aria-label="Facebook">
+                    <i class="fa-brands fa-facebook-f"></i>
+                </a>
+
+                <a href="404.html" aria-label="Instagram">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+
+                <a href="404.html" aria-label="Twitter">
+                    <i class="fa-brands fa-x-twitter"></i>
+                </a>
+
+                <a href="404.html" aria-label="YouTube">
+                    <i class="fa-brands fa-youtube"></i>
+                </a>
+
+                <a href="404.html" aria-label="WhatsApp">
+                    <i class="fa-brands fa-whatsapp"></i>
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- QUICK LINKS -->
+        <div class="footer-column">
+
+            <h3>Quick Links</h3>
+
+            <ul class="footer-links">
+
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="service.html">Service</a></li>
+                <li><a href="blogs.html">Blogs</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+
+            </ul>
+
+        </div>
+
+
+        <!-- CATEGORIES -->
+        <div class="footer-column">
+
+            <h3>Our Categories</h3>
+
+            <ul class="footer-links">
+
+                <li><a href="404.html">Fresh Fruits</a></li>
+                <li><a href="404.html">Organic Vegetables</a></li>
+                <li><a href="404.html">Healthy Grains</a></li>
+                <li><a href="404.html">Dry Fruits & Nuts</a></li>
+                <li><a href="404.html">Natural Honey</a></li>
+                <li><a href="404.html">Organic Foods</a></li>
+
+            </ul>
+
+        </div>
+
+
+        <!-- CONTACT DETAILS -->
+        <div class="footer-column footer-contact">
+
+            <h3>Get In Touch</h3>
+
+            <ul>
+
+                <li>
+                    <i class="fa-solid fa-location-dot"></i>
+                    <span>Madurai, Tamil Nadu, India</span>
+                </li>
+
+                <li>
+                    <i class="fa-solid fa-phone"></i>
+                    <a href="404.html">+91 98765 43210</a>
+                </li>
+
+                <li>
+                    <i class="fa-solid fa-envelope"></i>
+                    <a href="404.html">
+                        hello@stackly.com
+                    </a>
+                </li>
+
+                <li>
+                    <i class="fa-solid fa-clock"></i>
+                    <span>Monday - Saturday<br>9:00 AM - 8:00 PM</span>
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+
+    <!-- NEWSLETTER -->
+    <div class="footer-newsletter">
+
+        <div class="newsletter-content">
+            <h3>Stay Fresh With Stackly!</h3>
+            <p>
+                Subscribe to receive fresh updates, organic tips
+                and exclusive offers.
+            </p>
+        </div>
+
+        <form class="newsletter-form" action="404.html">
+
+            <input
+                type="email"
+                placeholder="Enter your email address"
+                required
+            >
+
+            <button type="submit">
+                Subscribe
+                <i class="fa-solid fa-arrow-right"></i>
+            </button>
+
+        </form>
+
+    </div>
+
+
+    <!-- FOOTER BOTTOM -->
+    <div class="footer-bottom">
+
+        <p>
+            © 2026 <span>Stackly Organic Store.</span>
+            All Rights Reserved.
+        </p>
+
+        <p class="footer-tagline">
+            Freshness From Nature
+            <i class="fa-solid fa-leaf"></i>
+        </p>
+
+        <div class="footer-bottom-links">
+            <a href="404.html">Privacy Policy</a>
+            <a href="404.html">Terms & Conditions</a>
+        </div>
+
+    </div>
+
+</footer>
+
+    </div>
+
+    <script src="js/script.js"></script>
+
+</body>
+</html>

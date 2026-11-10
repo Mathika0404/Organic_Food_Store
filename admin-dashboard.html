@@ -1,0 +1,1474 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Dashboard</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="css/admin-dashboard.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body>
+
+<div class="dashboard">
+
+<!-- SIDEBAR -->
+<aside class="sidebar" id="sidebar">
+
+    <div class="brand">
+        <img src="images/stackly_white_logo.webp" alt="Greenora Logo">
+    </div>
+
+    <p class="sidebar-label">MAIN MENU</p>
+
+    <nav class="nav-links">
+        <a href="#" class="active" data-page="overview">
+            <i class="fa-solid fa-chart-pie"></i> Overview
+        </a>
+        <a href="#" data-page="products">
+            <i class="fa-solid fa-leaf"></i> Products
+        </a>
+        <a href="#" data-page="orders">
+            <i class="fa-solid fa-box"></i> Orders
+        </a>
+        <a href="#" data-page="customers">
+            <i class="fa-solid fa-users"></i> Customers
+        </a>
+        <a href="#" data-page="reports">
+            <i class="fa-solid fa-chart-column"></i> Reports
+        </a>
+        <a href="#" data-page="settings">
+            <i class="fa-solid fa-gear"></i> Settings
+        </a>
+    </nav>
+
+<div class="sidebar-bottom">
+
+    <!-- ADMIN EMAIL BUTTON -->
+    <button class="admin-email-btn" type="button">
+        <i class="fa-solid fa-envelope"></i>
+        <span id="sidebarAdminEmail">admin@greenora.com</span>
+    </button>
+
+    <!-- LOGOUT -->
+    <a href="index.html"
+       onclick="return confirm('Are you sure you want to logout?')">
+        <i class="fa-solid fa-right-from-bracket"></i>
+        Logout
+    </a>
+
+</div>
+
+</aside>
+
+<div class="mobile-overlay" id="overlay"></div>
+
+<!-- MAIN CONTENT -->
+<main class="main">
+
+    <header class="topbar">
+
+        <div class="top-left">
+            <button class="menu-btn" id="menuBtn">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            <h2 id="pageTitle">Dashboard Overview</h2>
+        </div>
+
+          <!-- MOBILE CENTER LOGO -->
+    <a href="index.html" class="mobile-nav-logo">
+        <img src="images/stackly_logo.webp" alt="Greenora Logo">
+    </a>
+
+
+        <div class="top-right">
+
+            <button class="icon-btn" aria-label="Notifications">
+                <i class="fa-regular fa-bell"></i>
+                <span class="notification-dot"></span>
+            </button>
+
+            <div class="profile">
+                <div class="profile-avatar">
+                    <i class="fa-solid fa-user"></i>
+                </div>
+                <div class="profile-info">
+                    <strong>Admin</strong>
+                    <span id="adminEmail">Administrator</span>
+                </div>
+            </div>
+
+        </div>
+    </header>
+
+    <div class="content">
+
+        <!-- OVERVIEW -->
+        <section class="page-section active" id="overview">
+
+            <div class="welcome">
+                <div>
+                   <h1>Welcome Back, <span id="adminName">Admin</span>!</h1>
+                    <p>Here's what's happening with your organic store today.</p>
+                </div>
+                <div class="date-label">
+                    <i class="fa-regular fa-calendar"></i>
+                    <span id="currentDate"></span>
+                </div>
+            </div>
+
+            <div class="stats-grid">
+
+                <div class="stat-card">
+                    <div class="stat-top">
+                        <div class="stat-icon"><i class="fa-solid fa-indian-rupee-sign"></i></div>
+                        <span class="growth">+12.5%</span>
+                    </div>
+                    <h3>₹1,24,850</h3>
+                    <p>Total Revenue</p>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-top">
+                        <div class="stat-icon"><i class="fa-solid fa-bag-shopping"></i></div>
+                        <span class="growth">+8.2%</span>
+                    </div>
+                    <h3>1,248</h3>
+                    <p>Total Orders</p>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-top">
+                        <div class="stat-icon"><i class="fa-solid fa-seedling"></i></div>
+                        <span class="growth">+5.4%</span>
+                    </div>
+                    <h3>186</h3>
+                    <p>Total Products</p>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-top">
+                        <div class="stat-icon"><i class="fa-solid fa-users"></i></div>
+                        <span class="growth">+10.1%</span>
+                    </div>
+                    <h3>864</h3>
+                    <p>Total Customers</p>
+                </div>
+
+            </div>
+
+            <div class="panel-grid">
+
+                <div class="panel">
+                    <div class="panel-heading">
+                        <h3>Sales Overview</h3>
+                        <select>
+                            <option>Last 7 Days</option>
+                            <option>Last 30 Days</option>
+                            <option>Last 12 Months</option>
+                        </select>
+                    </div>
+
+                    <div class="chart">
+                        <div class="bar-group"><div class="bar" style="height:40%"></div><span>Mon</span></div>
+                        <div class="bar-group"><div class="bar" style="height:65%"></div><span>Tue</span></div>
+                        <div class="bar-group"><div class="bar" style="height:48%"></div><span>Wed</span></div>
+                        <div class="bar-group"><div class="bar" style="height:85%"></div><span>Thu</span></div>
+                        <div class="bar-group"><div class="bar" style="height:58%"></div><span>Fri</span></div>
+                        <div class="bar-group"><div class="bar" style="height:95%"></div><span>Sat</span></div>
+                        <div class="bar-group"><div class="bar" style="height:72%"></div><span>Sun</span></div>
+                    </div>
+                </div>
+
+                <div class="panel">
+                    <div class="panel-heading">
+                        <h3>Product Categories</h3>
+                    </div>
+
+                    <div class="category-list">
+                        <div class="category-item">
+                            <div class="category-icon"><i class="fa-solid fa-apple-whole"></i></div>
+                            <div class="category-info"><strong>Fresh Fruits</strong><span>42 Products</span></div>
+                            <span class="category-count">42</span>
+                        </div>
+
+                        <div class="category-item">
+                            <div class="category-icon"><i class="fa-solid fa-carrot"></i></div>
+                            <div class="category-info"><strong>Fresh Vegetables</strong><span>38 Products</span></div>
+                            <span class="category-count">38</span>
+                        </div>
+
+                        <div class="category-item">
+                            <div class="category-icon"><i class="fa-solid fa-wheat-awn"></i></div>
+                            <div class="category-info"><strong>Organic Grains</strong><span>26 Products</span></div>
+                            <span class="category-count">26</span>
+                        </div>
+
+                        <div class="category-item">
+                            <div class="category-icon"><i class="fa-solid fa-bottle-water"></i></div>
+                            <div class="category-info"><strong>Natural Products</strong><span>30 Products</span></div>
+                            <span class="category-count">30</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="table-panel">
+                <div class="panel-heading">
+                    <h3>Recent Orders</h3>
+                    <button class="view-btn" onclick="showPage('orders')">View All</button>
+                </div>
+
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ORDER ID</th>
+                                <th>CUSTOMER</th>
+                                <th>DATE</th>
+                                <th>AMOUNT</th>
+                                <th>STATUS</th>
+                                <th>ACTION</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>#GR1024</td>
+                                <td>Arun Kumar</td>
+                                <td>04 Nov 2026</td>
+                                <td>₹2,450</td>
+                                <td><span class="status delivered">Delivered</span></td>
+                                <td><button class="view-btn" onclick="window.location.href = '404.html' ">View</button></td>
+                            </tr>
+                            <tr>
+                                <td>#GR1025</td>
+                                <td>Priya S</td>
+                                <td>04 Nov 2026</td>
+                                <td>₹1,850</td>
+                                <td><span class="status pending">Pending</span></td>
+                                <td><button class="view-btn" onclick="window.location.href = '404.html' ">View</button></td>
+                            </tr>
+                            <tr>
+                                <td>#GR1026</td>
+                                <td>Rahul M</td>
+                                <td>03 Nov 2026</td>
+                                <td>₹3,200</td>
+                                <td><span class="status processing">Processing</span></td>
+                                <td><button class="view-btn" onclick="window.location.href = '404.html' ">View</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </section>
+
+
+<section class="page-section" id="products">
+
+    <div class="products-header">
+        <div>
+            <h1>Products Management</h1>
+            <p>Manage your organic products, prices and stock.</p>
+        </div>
+
+        <button class="add-product-btn" onclick="openProductModal()">
+            <i class="fa-solid fa-plus"></i>
+            Add New Product
+        </button>
+    </div>
+
+    <!-- PRODUCT STATS -->
+    <div class="product-stats">
+
+        <div class="product-stat-card">
+            <div class="product-stat-icon"><i class="fa-solid fa-box"></i></div>
+            <div>
+                <span>Total Products</span>
+                <h3 id="totalProducts">8</h3>
+            </div>
+        </div>
+
+        <div class="product-stat-card">
+            <div class="product-stat-icon"><i class="fa-solid fa-check-circle"></i></div>
+            <div>
+                <span>In Stock</span>
+                <h3 id="inStockProducts">6</h3>
+            </div>
+        </div>
+
+        <div class="product-stat-card">
+            <div class="product-stat-icon"><i class="fa-solid fa-triangle-exclamation"></i></div>
+            <div>
+                <span>Low Stock</span>
+                <h3 id="lowStockProducts">1</h3>
+            </div>
+        </div>
+
+        <div class="product-stat-card">
+            <div class="product-stat-icon"><i class="fa-solid fa-ban"></i></div>
+            <div>
+                <span>Out of Stock</span>
+                <h3 id="outStockProducts">1</h3>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- FILTER SECTION -->
+    <div class="product-toolbar">
+
+        <div class="product-search">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" id="productSearch"
+                   placeholder="Search products...">
+        </div>
+
+        <select id="categoryFilter">
+            <option value="all">All Categories</option>
+            <option value="Fruits">Fruits</option>
+            <option value="Vegetables">Vegetables</option>
+            <option value="Grains">Grains</option>
+            <option value="Dairy">Dairy</option>
+            <option value="Organic Foods">Organic Foods</option>
+        </select>
+
+        <select id="stockFilter">
+            <option value="all">All Stock Status</option>
+            <option value="In Stock">In Stock</option>
+            <option value="Low Stock">Low Stock</option>
+            <option value="Out of Stock">Out of Stock</option>
+        </select>
+
+    </div>
+
+    <!-- PRODUCT TABLE -->
+    <div class="products-table-panel">
+
+        <div class="products-table-heading">
+            <h3>All Products</h3>
+            <span id="productCountLabel">Showing 8 products</span>
+        </div>
+
+        <div class="products-table-wrap">
+            <table class="products-table">
+                <thead>
+                    <tr>
+                        <th>PRODUCT</th>
+                        <th>CATEGORY</th>
+                        <th>PRICE</th>
+                        <th>STOCK</th>
+                        <th>STATUS</th>
+                        <th>ACTION</th>
+                    </tr>
+                </thead>
+
+                <tbody id="productsTableBody"></tbody>
+            </table>
+        </div>
+
+        <div id="noProducts" class="no-products" style="display:none;">
+            <i class="fa-solid fa-box-open"></i>
+            <h3>No Products Found</h3>
+            <p>Try changing your search or filters.</p>
+        </div>
+
+    </div>
+
+</section>
+
+<section class="page-section" id="products">
+<!-- ADD / EDIT PRODUCT MODAL -->
+<div class="product-modal" id="productModal">
+
+    <div class="product-modal-card">
+
+        <div class="modal-heading">
+            <div>
+                <h2 id="modalTitle">Add New Product</h2>
+                <p>Enter your product details below.</p>
+            </div>
+
+            <button type="button" class="modal-close"
+                    onclick="closeProductModal()">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+
+        <form id="productForm">
+
+            <input type="hidden" id="editProductId">
+
+            <div class="product-form-grid">
+
+                <div class="product-form-group">
+                    <label>Product Name</label>
+                    <input type="text" id="productName"
+                           placeholder="Enter product name" required>
+                </div>
+
+                <div class="product-form-group">
+                    <label>Category</label>
+                    <select id="productCategory" required>
+                        <option value="">Select Category</option>
+                        <option value="Fruits">Fruits</option>
+                        <option value="Vegetables">Vegetables</option>
+                        <option value="Grains">Grains</option>
+                        <option value="Dairy">Dairy</option>
+                        <option value="Organic Foods">Organic Foods</option>
+                    </select>
+                </div>
+
+                <div class="product-form-group">
+                    <label>Price (₹)</label>
+                    <input type="number" id="productPrice"
+                           placeholder="Enter price" min="0" step="0.01" required>
+                </div>
+
+                <div class="product-form-group">
+                    <label>Stock Quantity</label>
+                    <input type="number" id="productStock"
+                           placeholder="Enter quantity" min="0" required>
+                </div>
+
+                <div class="product-form-group full-width">
+                    <label>Product Image URL</label>
+                    <input type="text" id="productImage"
+                           placeholder="images/product.webp">
+                </div>
+
+            </div>
+
+            <div class="product-form-actions">
+                <button type="button" class="cancel-product-btn"
+                        onclick="closeProductModal()">Cancel</button>
+
+                <button type="submit" class="save-product-btn">
+                    <i class="fa-solid fa-floppy-disk"></i>
+                    Save Product
+                </button>
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+</section>
+
+<section class="page-section" id="orders">
+
+    <!-- HEADER -->
+    <div class="orders-header">
+        <div>
+            <h1>Orders Management</h1>
+            <p>Manage customer orders and track organic product deliveries.</p>
+        </div>
+
+        <button class="export-orders-btn" onclick="window.location.href = '404.html'">
+            <i class="fa-solid fa-download"></i>
+            Export Orders
+        </button>
+    </div>
+
+    <!-- ORDER STATISTICS -->
+    <div class="order-stats">
+
+        <div class="order-stat-card">
+            <div class="order-stat-top">
+                <div class="order-stat-icon"><i class="fa-solid fa-boxes-stacked"></i></div>
+                <span class="order-stat-tag">All Orders</span>
+            </div>
+            <h3 id="allOrdersCount">8</h3>
+            <p>Total Orders</p>
+        </div>
+
+        <div class="order-stat-card">
+            <div class="order-stat-top">
+                <div class="order-stat-icon orange"><i class="fa-solid fa-clock"></i></div>
+                <span class="order-stat-tag">Waiting</span>
+            </div>
+            <h3 id="pendingOrdersCount">2</h3>
+            <p>Pending Orders</p>
+        </div>
+
+        <div class="order-stat-card">
+            <div class="order-stat-top">
+                <div class="order-stat-icon blue"><i class="fa-solid fa-truck-fast"></i></div>
+                <span class="order-stat-tag">On The Way</span>
+            </div>
+            <h3 id="shippingOrdersCount">2</h3>
+            <p>Shipped Orders</p>
+        </div>
+
+        <div class="order-stat-card">
+            <div class="order-stat-top">
+                <div class="order-stat-icon purple"><i class="fa-solid fa-check-double"></i></div>
+                <span class="order-stat-tag">Completed</span>
+            </div>
+            <h3 id="deliveredOrdersCount">3</h3>
+            <p>Delivered Orders</p>
+        </div>
+
+    </div>
+
+    <!-- ORDER FILTER TABS -->
+    <div class="order-filter-tabs">
+        <button class="order-tab active" data-status="All">All Orders</button>
+        <button class="order-tab" data-status="Pending">Pending</button>
+        <button class="order-tab" data-status="Processing">Processing</button>
+        <button class="order-tab" data-status="Shipped">Shipped</button>
+        <button class="order-tab" data-status="Delivered">Delivered</button>
+        <button class="order-tab" data-status="Cancelled">Cancelled</button>
+    </div>
+
+    <!-- SEARCH AND FILTER -->
+    <div class="orders-toolbar">
+
+        <div class="orders-search">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" id="orderSearch"
+                   placeholder="Search order ID or customer...">
+        </div>
+
+        <select id="orderPaymentFilter">
+            <option value="All">All Payments</option>
+            <option value="Paid">Paid</option>
+            <option value="Pending">Payment Pending</option>
+            <option value="Refunded">Refunded</option>
+        </select>
+
+        <select id="orderSort">
+            <option value="newest">Newest First</option>
+            <option value="oldest">Oldest First</option>
+            <option value="highest">Highest Amount</option>
+            <option value="lowest">Lowest Amount</option>
+        </select>
+
+    </div>
+
+    <!-- ORDERS TABLE -->
+    <div class="orders-table-panel">
+
+        <div class="orders-table-heading">
+            <div>
+                <h3>Recent Orders</h3>
+                <p>View and manage all customer purchases.</p>
+            </div>
+
+            <span id="ordersShowing">Showing 8 orders</span>
+        </div>
+
+        <div class="orders-table-wrap">
+            <table class="orders-table">
+                <thead>
+                    <tr>
+                        <th>ORDER ID</th>
+                        <th>CUSTOMER</th>
+                        <th>ORDER DATE</th>
+                        <th>ITEMS</th>
+                        <th>TOTAL</th>
+                        <th>PAYMENT</th>
+                        <th>STATUS</th>
+                        <th>ACTION</th>
+                    </tr>
+                </thead>
+
+                <tbody id="ordersTableBody"></tbody>
+            </table>
+        </div>
+
+        <div class="orders-empty" id="ordersEmpty" style="display:none;">
+            <i class="fa-solid fa-box-open"></i>
+            <h3>No Orders Found</h3>
+            <p>Try another search or filter.</p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= ORDERS SECTION ================= -->
+<section class="page-section" id="orders">
+
+    <!-- ORDERS HEADER -->
+    <div class="section-header">
+        <div>
+            <span class="section-subtitle">ORDER MANAGEMENT</span>
+            <h2>Orders Management</h2>
+            <p>Manage and track all customer orders.</p>
+        </div>
+    </div>
+
+    <!-- ORDER STATISTICS -->
+    <div class="order-stats">
+
+        <div class="order-stat-card">
+            <h4>Total Orders</h4>
+            <h2 id="allOrdersCount">0</h2>
+        </div>
+
+        <div class="order-stat-card">
+            <h4>Pending Orders</h4>
+            <h2 id="pendingOrdersCount">0</h2>
+        </div>
+
+        <div class="order-stat-card">
+            <h4>Shipped Orders</h4>
+            <h2 id="shippingOrdersCount">0</h2>
+        </div>
+
+        <div class="order-stat-card">
+            <h4>Delivered Orders</h4>
+            <h2 id="deliveredOrdersCount">0</h2>
+        </div>
+
+    </div>
+
+    <!-- ORDER FILTERS -->
+    <div class="orders-toolbar">
+
+        <input type="search"
+               id="orderSearch"
+               placeholder="Search orders...">
+
+        <select id="orderPaymentFilter">
+            <option value="all">All Payments</option>
+            <option value="Paid">Paid</option>
+            <option value="Pending">Pending</option>
+        </select>
+
+        <select id="orderSort">
+            <option value="newest">Newest First</option>
+            <option value="oldest">Oldest First</option>
+        </select>
+
+    </div>
+
+    <!-- ORDER STATUS TABS -->
+    <div class="order-tabs">
+
+        <button class="order-tab active" data-status="All">All</button>
+        <button class="order-tab" data-status="Pending">Pending</button>
+        <button class="order-tab" data-status="Processing">Processing</button>
+        <button class="order-tab" data-status="Shipped">Shipped</button>
+        <button class="order-tab" data-status="Delivered">Delivered</button>
+        <button class="order-tab" data-status="Cancelled">Cancelled</button>
+
+    </div>
+
+    <!-- ORDERS TABLE -->
+    <div class="orders-table-container">
+
+        <table class="orders-table">
+
+            <thead>
+                <tr>
+                    <th>Order ID</th>
+                    <th>Customer</th>
+                    <th>Date</th>
+                    <th>Items</th>
+                    <th>Amount</th>
+                    <th>Payment</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+
+            <tbody id="ordersTableBody">
+                <!-- Orders generated using JavaScript -->
+            </tbody>
+
+        </table>
+
+        <div id="ordersEmpty" style="display:none;">
+            <p>No orders found.</p>
+        </div>
+
+    </div>
+
+    <!-- ORDERS FOOTER -->
+    <div class="orders-footer">
+        <span id="ordersShowing">Showing 0 orders</span>
+
+        <button type="button" onclick="exportOrders()">
+            <i class="fa-solid fa-file-export"></i>
+            Export Orders
+        </button>
+    </div>
+
+</section>
+<!-- ================= END ORDERS SECTION ================= -->
+
+
+<!-- ================= ORDER DETAILS MODAL ================= -->
+<div class="order-modal" id="orderModal">
+
+    <div class="order-modal-card">
+
+        <!-- MODAL HEADER -->
+        <div class="order-modal-header">
+
+            <div>
+                <span>ORDER DETAILS</span>
+                <h2 id="detailOrderId">#GR1001</h2>
+            </div>
+
+            <button type="button"
+                    class="order-modal-close"
+                    onclick="closeOrderModal()"
+                    aria-label="Close modal">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+        </div>
+
+        <!-- MODAL BODY -->
+        <div class="order-detail-body">
+
+            <!-- CUSTOMER INFORMATION -->
+            <div class="order-detail-block">
+
+                <h4>
+                    <i class="fa-solid fa-user"></i>
+                    Customer Information
+                </h4>
+
+                <p id="detailCustomer"></p>
+                <p id="detailPhone"></p>
+                <p id="detailAddress"></p>
+
+            </div>
+
+            <!-- ORDER INFORMATION -->
+            <div class="order-detail-block">
+
+                <h4>
+                    <i class="fa-solid fa-receipt"></i>
+                    Order Information
+                </h4>
+
+                <p id="detailDate"></p>
+                <p id="detailItems"></p>
+                <p id="detailAmount"></p>
+                <p id="detailPayment"></p>
+
+            </div>
+
+            <!-- ORDER STATUS -->
+            <div class="order-detail-block">
+
+                <h4>
+                    <i class="fa-solid fa-truck"></i>
+                    Update Order Status
+                </h4>
+
+                <select id="detailStatus">
+                    <option value="Pending">Pending</option>
+                    <option value="Processing">Processing</option>
+                    <option value="Shipped">Shipped</option>
+                    <option value="Delivered">Delivered</option>
+                    <option value="Cancelled">Cancelled</option>
+                </select>
+
+            </div>
+
+        </div>
+
+        <!-- MODAL FOOTER -->
+        <div class="order-modal-actions">
+
+            <button type="button"
+                    class="order-cancel-btn"
+                    onclick="closeOrderModal()">
+                Close
+            </button>
+
+            <button type="button"
+                    class="order-save-btn"
+                    onclick="window.location.href = '404.html'">
+                <i class="fa-solid fa-floppy-disk"></i>
+                Update Status
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+<!-- ================= END ORDER DETAILS MODAL ================= -->
+
+
+<!-- ================= CUSTOMERS SECTION ================= -->
+<section class="page-section" id="customers">
+
+    <!-- HEADER -->
+    <div class="section-header">
+<div class="section-header">
+    <div>
+        <h2>Customers Management</h2>
+    </div>
+</div>
+
+        <button class="customer-export-btn" onclick="exportCustomers()">
+            <i class="fa-solid fa-file-export"></i>
+            Export Customers
+        </button>
+    </div>
+
+    <!-- CUSTOMER STATISTICS -->
+    <div class="customer-stats">
+
+        <div class="customer-stat-card">
+            <div class="customer-stat-icon">
+                <i class="fa-solid fa-users"></i>
+            </div>
+            <div>
+                <p>Total Customers</p>
+                <h2 id="totalCustomers">0</h2>
+            </div>
+        </div>
+
+        <div class="customer-stat-card">
+            <div class="customer-stat-icon">
+                <i class="fa-solid fa-user-check"></i>
+            </div>
+            <div>
+                <p>Active Customers</p>
+                <h2 id="activeCustomers">0</h2>
+            </div>
+        </div>
+
+        <div class="customer-stat-card">
+            <div class="customer-stat-icon">
+                <i class="fa-solid fa-user-plus"></i>
+            </div>
+            <div>
+                <p>New Customers</p>
+                <h2 id="newCustomers">0</h2>
+            </div>
+        </div>
+
+        <div class="customer-stat-card">
+            <div class="customer-stat-icon">
+                <i class="fa-solid fa-cart-shopping"></i>
+            </div>
+            <div>
+                <p>Total Orders</p>
+                <h2 id="customerTotalOrders">0</h2>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- CUSTOMER TOOLBAR -->
+    <div class="customer-toolbar">
+
+        <div class="customer-search">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="search"
+                   id="customerSearch"
+                   placeholder="Search by name, email or phone...">
+        </div>
+
+        <select id="customerStatusFilter">
+            <option value="All">All Customers</option>
+            <option value="Active">Active</option>
+            <option value="Inactive">Inactive</option>
+        </select>
+
+        <select id="customerSort">
+            <option value="newest">Newest First</option>
+            <option value="oldest">Oldest First</option>
+            <option value="highest">Highest Orders</option>
+        </select>
+
+    </div>
+
+    <!-- CUSTOMER TABLE -->
+    <div class="customer-table-container">
+
+        <table class="customer-table">
+
+            <thead>
+                <tr>
+                    <th>Customer</th>
+                    <th>Phone</th>
+                    <th>Location</th>
+                    <th>Total Orders</th>
+                    <th>Total Spent</th>
+                    <th>Joined Date</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+
+            <tbody id="customersTableBody">
+                <!-- JavaScript customer rows -->
+            </tbody>
+
+        </table>
+
+        <div id="customersEmpty" style="display:none;">
+            <i class="fa-solid fa-users"></i>
+            <p>No customers found.</p>
+        </div>
+
+    </div>
+
+    <!-- TABLE FOOTER -->
+    <div class="customer-table-footer">
+        <span id="customersShowing">Showing 0 customers</span>
+    </div>
+
+</section>
+<!-- ================= END CUSTOMERS SECTION ================= -->
+
+
+<!-- ================= CUSTOMER DETAILS MODAL ================= -->
+<div class="customer-modal" id="customerModal">
+
+    <div class="customer-modal-card">
+
+        <div class="customer-modal-header">
+            <div>
+                <span>CUSTOMER PROFILE</span>
+                <h2 id="customerDetailName">Customer Name</h2>
+            </div>
+
+            <button type="button"
+                    onclick="closeCustomerModal()"
+                    class="customer-modal-close">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+
+        <div class="customer-detail-body">
+
+            <div class="customer-detail-block">
+                <h4>
+                    <i class="fa-solid fa-user"></i>
+                    Personal Information
+                </h4>
+
+                <p id="customerDetailEmail"></p>
+                <p id="customerDetailPhone"></p>
+                <p id="customerDetailAddress"></p>
+            </div>
+
+            <div class="customer-detail-block">
+                <h4>
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    Shopping Information
+                </h4>
+
+                <p id="customerDetailOrders"></p>
+                <p id="customerDetailSpent"></p>
+                <p id="customerDetailJoined"></p>
+            </div>
+
+            <div class="customer-detail-block">
+                <h4>
+                    <i class="fa-solid fa-circle-check"></i>
+                    Account Status
+                </h4>
+
+                <select id="customerDetailStatus">
+                    <option value="Active">Active</option>
+                    <option value="Inactive">Inactive</option>
+                </select>
+            </div>
+
+        </div>
+
+        <div class="customer-modal-actions">
+
+            <button type="button"
+                    class="customer-close-btn"
+                    onclick="closeCustomerModal()">
+                Close
+            </button>
+
+            <button type="button"
+                    class="customer-save-btn"
+                    onclick="saveCustomerStatus()">
+                <i class="fa-solid fa-floppy-disk"></i>
+                Update Status
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+<!-- ================= END CUSTOMER MODAL ================= -->
+
+
+<!-- ================= REPORTS SECTION ================= -->
+<section class="page-section" id="reports">
+
+    <!-- HEADER -->
+    <div class="reports-header">
+        <div>
+            <h2>Reports & Analytics</h2>
+            <p>Track your store performance and business growth.</p>
+        </div>
+
+        <button class="report-export-btn" onclick="goTo404()">
+            <i class="fa-solid fa-file-export"></i>
+            Export Report
+        </button>
+    </div>
+
+
+    <!-- REPORT STATS -->
+    <div class="report-stats-grid">
+
+        <div class="report-stat-card">
+            <div class="report-stat-icon">
+                <i class="fa-solid fa-indian-rupee-sign"></i>
+            </div>
+            <div>
+                <p>Total Revenue</p>
+                <h3>₹8,45,680</h3>
+                <span class="report-growth">
+                    <i class="fa-solid fa-arrow-up"></i> 12.8%
+                </span>
+            </div>
+        </div>
+
+        <div class="report-stat-card">
+            <div class="report-stat-icon">
+                <i class="fa-solid fa-bag-shopping"></i>
+            </div>
+            <div>
+                <p>Total Orders</p>
+                <h3>2,486</h3>
+                <span class="report-growth">
+                    <i class="fa-solid fa-arrow-up"></i> 8.4%
+                </span>
+            </div>
+        </div>
+
+        <div class="report-stat-card">
+            <div class="report-stat-icon">
+                <i class="fa-solid fa-chart-line"></i>
+            </div>
+            <div>
+                <p>Average Order Value</p>
+                <h3>₹340</h3>
+                <span class="report-growth">
+                    <i class="fa-solid fa-arrow-up"></i> 5.2%
+                </span>
+            </div>
+        </div>
+
+        <div class="report-stat-card">
+            <div class="report-stat-icon">
+                <i class="fa-solid fa-users"></i>
+            </div>
+            <div>
+                <p>Total Customers</p>
+                <h3>1,842</h3>
+                <span class="report-growth">
+                    <i class="fa-solid fa-arrow-up"></i> 10.6%
+                </span>
+            </div>
+        </div>
+
+    </div>
+
+
+    <!-- REVENUE CHART -->
+    <div class="report-main-grid">
+
+        <div class="report-panel revenue-panel">
+
+            <div class="report-panel-header">
+                <div>
+                    <h3>Revenue Overview</h3>
+                    <p>Monthly revenue performance</p>
+                </div>
+
+                <button class="report-action-btn" onclick="goTo404()">
+                    View Details
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+            </div>
+
+            <div class="revenue-summary">
+                <h2>₹8,45,680</h2>
+                <span>
+                    <i class="fa-solid fa-arrow-up"></i>
+                    12.8% this year
+                </span>
+            </div>
+
+            <div class="report-chart-container">
+                <canvas id="revenueChart"></canvas>
+            </div>
+
+        </div>
+
+
+        <!-- REVENUE BREAKDOWN -->
+        <div class="report-panel breakdown-panel">
+
+            <div class="report-panel-header">
+                <div>
+                    <h3>Revenue Breakdown</h3>
+                    <p>Category-wise sales distribution</p>
+                </div>
+            </div>
+
+            <div class="breakdown-chart-container">
+                <canvas id="revenueBreakdownChart"></canvas>
+            </div>
+
+            <div class="revenue-legend">
+
+                <div>
+                    <span class="legend-dot legend-one"></span>
+                    Organic Fruits
+                    <strong>35%</strong>
+                </div>
+
+                <div>
+                    <span class="legend-dot legend-two"></span>
+                    Vegetables
+                    <strong>28%</strong>
+                </div>
+
+                <div>
+                    <span class="legend-dot legend-three"></span>
+                    Dairy Products
+                    <strong>22%</strong>
+                </div>
+
+                <div>
+                    <span class="legend-dot legend-four"></span>
+                    Others
+                    <strong>15%</strong>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ORDER FLOW CHART -->
+    <div class="report-panel order-flow-panel">
+
+        <div class="report-panel-header">
+            <div>
+                <h3>Order Flow Analytics</h3>
+                <p>Track the complete order journey</p>
+            </div>
+
+            <button class="report-action-btn" onclick="goTo404()">
+                Full Report
+                <i class="fa-solid fa-arrow-right"></i>
+            </button>
+        </div>
+
+        <div class="order-flow-container">
+
+            <div class="flow-step">
+                <div class="flow-icon">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                </div>
+                <h3>2,486</h3>
+                <p>Orders Placed</p>
+            </div>
+
+            <div class="flow-connector">
+                <span></span>
+                <i class="fa-solid fa-chevron-right"></i>
+            </div>
+
+            <div class="flow-step">
+                <div class="flow-icon">
+                    <i class="fa-solid fa-clipboard-check"></i>
+                </div>
+                <h3>2,240</h3>
+                <p>Confirmed</p>
+            </div>
+
+            <div class="flow-connector">
+                <span></span>
+                <i class="fa-solid fa-chevron-right"></i>
+            </div>
+
+            <div class="flow-step">
+                <div class="flow-icon">
+                    <i class="fa-solid fa-box"></i>
+                </div>
+                <h3>1,980</h3>
+                <p>Processing</p>
+            </div>
+
+            <div class="flow-connector">
+                <span></span>
+                <i class="fa-solid fa-chevron-right"></i>
+            </div>
+
+            <div class="flow-step">
+                <div class="flow-icon">
+                    <i class="fa-solid fa-truck-fast"></i>
+                </div>
+                <h3>1,760</h3>
+                <p>Shipped</p>
+            </div>
+
+            <div class="flow-connector">
+                <span></span>
+                <i class="fa-solid fa-chevron-right"></i>
+            </div>
+
+            <div class="flow-step">
+                <div class="flow-icon">
+                    <i class="fa-solid fa-circle-check"></i>
+                </div>
+                <h3>1,620</h3>
+                <p>Delivered</p>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- SALES PERFORMANCE -->
+    <div class="report-bottom-grid">
+
+        <div class="report-panel performance-panel">
+
+            <div class="report-panel-header">
+                <div>
+                    <h3>Sales Performance</h3>
+                    <p>Weekly sales comparison</p>
+                </div>
+            </div>
+
+            <div class="performance-chart-container">
+                <canvas id="salesPerformanceChart"></canvas>
+            </div>
+
+        </div>
+
+
+        <!-- QUICK REPORTS -->
+        <div class="report-panel quick-report-panel">
+
+            <div class="report-panel-header">
+                <div>
+                    <h3>Quick Reports</h3>
+                    <p>Explore your business reports</p>
+                </div>
+            </div>
+
+            <div class="quick-report-list">
+
+                <div class="quick-report-item">
+                    <div class="quick-report-icon">
+                        <i class="fa-solid fa-money-bill-trend-up"></i>
+                    </div>
+
+                    <div>
+                        <h4>Revenue Report</h4>
+                        <p>Income and earnings analysis</p>
+                    </div>
+
+                    <button onclick="goTo404()">
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
+
+                <div class="quick-report-item">
+                    <div class="quick-report-icon">
+                        <i class="fa-solid fa-boxes-stacked"></i>
+                    </div>
+
+                    <div>
+                        <h4>Inventory Report</h4>
+                        <p>Stock and product analysis</p>
+                    </div>
+
+                    <button onclick="goTo404()">
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
+
+                <div class="quick-report-item">
+                    <div class="quick-report-icon">
+                        <i class="fa-solid fa-users"></i>
+                    </div>
+
+                    <div>
+                        <h4>Customer Report</h4>
+                        <p>Customer growth and activity</p>
+                    </div>
+
+                    <button onclick="goTo404()">
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
+
+                <div class="quick-report-item">
+                    <div class="quick-report-icon">
+                        <i class="fa-solid fa-truck"></i>
+                    </div>
+
+                    <div>
+                        <h4>Delivery Report</h4>
+                        <p>Order delivery performance</p>
+                    </div>
+
+                    <button onclick="goTo404()">
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+    </div>
+
+<!-- SETTINGS / 404 SECTION -->
+<section class="page-section" id="settings">
+
+    <div class="error-404-container">
+
+        <div class="error-404-content">
+
+            <div class="error-404-icon">
+                <i class="fa-solid fa-triangle-exclamation"></i>
+            </div>
+
+            <h1>404</h1>
+
+            <h2>Page Not Found!</h2>
+
+            <p>
+                Oops! The settings page you're looking for
+                is currently unavailable or doesn't exist.
+            </p>
+
+            <div class="error-404-buttons">
+                <button onclick="history.back()">
+                    <i class="fa-solid fa-arrow-left"></i>
+                    Go Back
+                </button>
+
+                <button onclick="window.location.href='admin-dashboard.html'">
+                    <i class="fa-solid fa-house"></i>
+                    Go Home
+                </button>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+</main>
+</div>
+
+<script src="js/admin-dashboard.js"></script>
+<script>
+    // INITIAL LOAD
+activeOrderFilter = "All";
+
+document.querySelectorAll(".order-tab").forEach(tab => {
+    tab.classList.toggle("active", tab.dataset.status === "All");
+});
+
+renderOrders();
+
+// SAVE CURRENT DASHBOARD SECTION BEFORE OPENING 404
+document.addEventListener("click", function () {
+
+    const currentSection = document.querySelector(
+        ".page-section.active"
+    );
+
+    if (currentSection) {
+        sessionStorage.setItem(
+            "greenoraReturnSection",
+            currentSection.id
+        );
+    }
+
+}, true);
+
+
+// SAVE CURRENT SECTION BEFORE OPENING 404
+document.addEventListener("click", function (event) {
+
+    const currentSection = document.querySelector(
+        ".page-section.active"
+    );
+
+    if (!currentSection) return;
+
+    const clickedElement = event.target.closest(
+        "button, a, [data-404]"
+    );
+
+    if (!clickedElement) return;
+
+    sessionStorage.setItem(
+        "greenoraReturnSection",
+        currentSection.id
+    );
+
+    sessionStorage.setItem(
+        "greenoraFromDashboard",
+        "true"
+    );
+
+}, true);
+
+
+// RESTORE DASHBOARD SECTION
+(function () {
+
+    const params = new URLSearchParams(window.location.search);
+    const returnSection = params.get("returnSection");
+
+    if (!returnSection) return;
+
+    const sectionLink = document.querySelector(
+        `[data-page="${returnSection}"]`
+    );
+
+    if (sectionLink) {
+        sectionLink.click();
+    }
+
+    // Clean URL without reloading
+    window.history.replaceState(
+        {},
+        document.title,
+        window.location.pathname
+    );
+
+})();
+</script>
+
+</body>
+</html>
